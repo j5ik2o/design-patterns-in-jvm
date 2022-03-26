@@ -5,9 +5,9 @@ import j.flyweight.BigString
 
 object Main {
   def main(args: Array[String]): Unit = {
-    if (args.length == 0) {
-      System.out.println("Usage: java Main digits")
-      System.out.println("Example: java Main 1212123")
+    if (args.isEmpty) {
+      println("Usage: java Main digits")
+      println("Example: java Main 1212123")
       System.exit(0)
     }
     val bs = new BigString(args(0))
