@@ -12,33 +12,31 @@ import k.command.drawer.DrawCanvas
 import k.command.drawer.DrawCommand
 
 class Main(title: String?) : JFrame(title), MouseMotionListener, WindowListener {
-  // 描画履歴
   private val history = MacroCommand()
-
-  // 描画領域
   private val canvas = DrawCanvas(400, 400, history)
 
-  // コンストラクタ
   init {
     addWindowListener(this)
     canvas.addMouseMotionListener(this)
-    // 消去ボタン
+
     val clearButton = JButton("clear")
     clearButton.addActionListener { e: ActionEvent? ->
       history.clear()
       canvas.repaint()
     }
+
     val buttonBox = Box(BoxLayout.X_AXIS)
     buttonBox.add(clearButton)
+
     val mainBox = Box(BoxLayout.Y_AXIS)
     mainBox.add(buttonBox)
     mainBox.add(canvas)
+
     contentPane.add(mainBox)
     pack()
     isVisible = true
   }
 
-  // MouseMotionListener用
   override fun mouseMoved(e: MouseEvent) {}
   override fun mouseDragged(e: MouseEvent) {
     val cmd: Command = DrawCommand(canvas, e.point)
@@ -46,7 +44,6 @@ class Main(title: String?) : JFrame(title), MouseMotionListener, WindowListener 
     cmd.execute()
   }
 
-  // WindowListener用
   override fun windowClosing(e: WindowEvent) {
     System.exit(0)
   }

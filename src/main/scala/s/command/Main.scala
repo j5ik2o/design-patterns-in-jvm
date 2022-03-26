@@ -4,8 +4,10 @@ package s.command
 import s.command.command.MacroCommand
 import s.command.drawer.DrawCanvas
 import s.command.drawer.DrawCommand
+
 import java.awt.event._
 import javax.swing._
+import scala.annotation.unused
 
 object Main {
   def main(args: Array[String]): Unit = {
@@ -13,7 +15,7 @@ object Main {
   }
 }
 
-class Main(title: String) // コンストラクタ
+class Main(title: String)
     extends JFrame(title)
     with MouseMotionListener
     with WindowListener {
@@ -23,10 +25,9 @@ class Main(title: String) // コンストラクタ
   addWindowListener(this)
   canvas.addMouseMotionListener(this)
 
-  // 消去ボタン
   val clearButton = new JButton("clear")
   clearButton.addActionListener((e: ActionEvent) => {
-    def foo(e: ActionEvent) = {
+    def foo(@unused e: ActionEvent): Unit = {
       history.clear()
       canvas.repaint()
     }

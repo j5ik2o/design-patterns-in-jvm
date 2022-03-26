@@ -9,18 +9,15 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class Main extends JFrame implements MouseMotionListener, WindowListener {
-    // 描画履歴
     private final MacroCommand history = new MacroCommand();
-    // 描画領域
     private final DrawCanvas canvas = new DrawCanvas(400, 400, history);
 
-    // コンストラクタ
     public Main(String title) {
         super(title);
 
         this.addWindowListener(this);
         canvas.addMouseMotionListener(this);
-        // 消去ボタン
+
         JButton clearButton = new JButton("clear");
         clearButton.addActionListener(
                 e -> {
@@ -30,16 +27,16 @@ public class Main extends JFrame implements MouseMotionListener, WindowListener 
 
         Box buttonBox = new Box(BoxLayout.X_AXIS);
         buttonBox.add(clearButton);
+
         Box mainBox = new Box(BoxLayout.Y_AXIS);
         mainBox.add(buttonBox);
         mainBox.add(canvas);
-        getContentPane().add(mainBox);
 
+        getContentPane().add(mainBox);
         pack();
         setVisible(true);
     }
 
-    // MouseMotionListener用
     @Override
     public void mouseMoved(MouseEvent e) {}
 
@@ -50,7 +47,6 @@ public class Main extends JFrame implements MouseMotionListener, WindowListener 
         cmd.execute();
     }
 
-    // WindowListener用
     @Override
     public void windowClosing(WindowEvent e) {
         System.exit(0);
