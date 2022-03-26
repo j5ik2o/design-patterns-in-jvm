@@ -6,7 +6,7 @@ import java.nio.file.Files
 import java.nio.file.Path
 
 class BigChar(private val charname: Char) {
-  private var fontdata: String? = null
+  private var fontdata: String
 
   init {
     try {

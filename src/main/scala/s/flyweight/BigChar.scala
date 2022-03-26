@@ -6,21 +6,20 @@ import java.nio.file.Files
 import java.nio.file.Path
 import scala.jdk.CollectionConverters._
 
-class BigChar(var charname: Char) {
-  private var fontdata: Option[String] = None
+class BigChar(val charname: Char) {
 
-  try {
-    val filename = "data/" + "big" + charname + ".txt"
-    val sb = new StringBuilder
-    for (line <- Files.readAllLines(Path.of(filename)).asScala) {
-      sb.append(line)
-      sb.append("\n")
+  private val fontdata: String =
+    try {
+      val filename = "data/" + "big" + charname + ".txt"
+      val sb = new StringBuilder
+      for (line <- Files.readAllLines(Path.of(filename)).asScala) {
+        sb.append(line)
+        sb.append("\n")
+      }
+      sb.toString
+    } catch {
+      case _: IOException => charname + "?"
     }
-    fontdata = Some(sb.toString)
-  } catch {
-    case _: IOException =>
-      this.fontdata = Some(charname + "?")
-  }
 
   def print(): Unit = {
     fontdata.foreach(scala.Predef.print)

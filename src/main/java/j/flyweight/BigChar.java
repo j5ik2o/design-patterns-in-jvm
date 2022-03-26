@@ -6,7 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class BigChar {
-    private char charname;
+    private final char charname;
     private String fontdata;
 
     public BigChar(char charname) {
