@@ -20,7 +20,7 @@ class Main(title: String?) : JFrame(title), MouseMotionListener, WindowListener 
     canvas.addMouseMotionListener(this)
 
     val clearButton = JButton("clear")
-    clearButton.addActionListener { e: ActionEvent? ->
+    clearButton.addActionListener {
       history.clear()
       canvas.repaint()
     }

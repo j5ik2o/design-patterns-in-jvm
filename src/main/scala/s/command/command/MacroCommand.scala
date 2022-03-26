@@ -14,8 +14,7 @@ class MacroCommand extends Command {
   }
 
   def append(cmd: Command): Unit = {
-    if (cmd eq this)
-      throw new IllegalArgumentException("infinite loop caused by append")
+    require(cmd eq this, "infinite loop caused by append")
     commands.push(cmd)
   }
 
