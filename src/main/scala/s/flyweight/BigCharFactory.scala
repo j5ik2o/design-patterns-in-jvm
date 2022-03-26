@@ -12,7 +12,7 @@ object BigCharFactory {
 class BigCharFactory private () {
   private val pool = mutable.Map.empty[String, BigChar]
 
-  def getBigChar(charname: Char): BigChar = {
+  def getBigChar(charname: Char): BigChar = synchronized {
     pool.getOrElseUpdate(String.valueOf(charname), new BigChar(charname))
   }
 }
