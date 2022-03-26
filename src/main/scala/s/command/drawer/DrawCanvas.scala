@@ -9,23 +9,19 @@ import java.awt.Graphics
 
 class DrawCanvas(
     width: Int,
-    height: Int, // 履歴
+    height: Int,
     var history: MacroCommand
-) // コンストラクタ
-    extends Canvas
+) extends Canvas
     with Drawable {
   setSize(width, height)
   setBackground(Color.white)
-  // 描画色
   private val color = Color.red
-  // 描画する点の半径
   private val radius = 6
 
   override def paint(g: Graphics): Unit = {
     history.execute()
   }
 
-  // 描画
   override def draw(x: Int, y: Int): Unit = {
     val g = getGraphics
     g.setColor(color)

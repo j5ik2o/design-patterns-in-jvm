@@ -7,14 +7,10 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 public class DrawCanvas extends Canvas implements Drawable {
-    // 描画色
-    private Color color = Color.red;
-    // 描画する点の半径
-    private int radius = 6;
-    // 履歴
-    private MacroCommand history;
+    private final Color color = Color.red;
+    private final int radius = 6;
+    private final MacroCommand history;
 
-    // コンストラクタ
     public DrawCanvas(int width, int height, MacroCommand history) {
         setSize(width, height);
         setBackground(Color.white);
@@ -26,7 +22,6 @@ public class DrawCanvas extends Canvas implements Drawable {
         history.execute();
     }
 
-    // 描画
     @Override
     public void draw(int x, int y) {
         Graphics g = getGraphics();

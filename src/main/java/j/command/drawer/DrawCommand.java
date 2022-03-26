@@ -5,9 +5,9 @@ import j.command.command.Command;
 import java.awt.Point;
 
 public class DrawCommand implements Command {
-    protected Drawable drawable;
+    private final Drawable drawable;
 
-    private Point position;
+    private final Point position;
 
     public DrawCommand(Drawable drawable, Point position) {
         this.drawable = drawable;
