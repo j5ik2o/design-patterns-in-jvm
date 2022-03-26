@@ -13,11 +13,6 @@ class BigCharFactory private () {
   private val pool = mutable.Map.empty[String, BigChar]
 
   def getBigChar(charname: Char): BigChar = {
-    var bc = pool(String.valueOf(charname))
-    if (bc == null) { // ここでBigCharのインスタンスを生成
-      bc = new BigChar(charname)
-      pool.put(String.valueOf(charname), bc)
-    }
-    bc
+    pool.getOrElseUpdate(String.valueOf(charname), new BigChar(charname))
   }
 }

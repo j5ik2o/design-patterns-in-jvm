@@ -15,12 +15,7 @@ public class BigCharFactory {
     }
 
     public synchronized BigChar getBigChar(char charname) {
-        BigChar bc = pool.get(String.valueOf(charname));
-        if (bc == null) {
-            // ここでBigCharのインスタンスを生成
-            bc = new BigChar(charname);
-            pool.put(String.valueOf(charname), bc);
-        }
+        BigChar bc = pool.getOrDefault(String.valueOf(charname), new BigChar(charname));
         return bc;
     }
 }
