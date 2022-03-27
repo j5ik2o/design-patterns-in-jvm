@@ -4,12 +4,11 @@ package s.flyweight
 class BigString(string: String) {
 
   private val bigChars: Seq[BigChar] =
-    for (i <- 0 until string.length)
-      yield BigCharFactory.getBigChar(string.charAt(i))
+    for (c <- string)
+      yield { BigCharFactory.getBigChar(c) }
 
   def print(): Unit = {
-    for (bc <- bigChars) {
+    for (bc <- bigChars)
       bc.print()
-    }
   }
 }
