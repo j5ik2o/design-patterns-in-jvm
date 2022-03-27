@@ -5,8 +5,8 @@ import java.io.IOException
 import java.nio.file.Files
 import java.nio.file.Path
 
-class BigChar(private val charname: Char) {
-  private val fontdata: String = try {
+class BigChar(charname: Char) {
+  private val fontData: String = try {
     val filename = "data/big$charname.txt"
     val sb = StringBuilder()
     for (line in Files.readAllLines(Path.of(filename))) {
@@ -19,6 +19,6 @@ class BigChar(private val charname: Char) {
   }
 
   fun print() {
-    print(fontdata)
+    print(fontData)
   }
 }

@@ -6,9 +6,9 @@ import java.nio.file.Files
 import java.nio.file.Path
 import scala.jdk.CollectionConverters._
 
-class BigChar(val charname: Char) {
+class BigChar(charname: Char) {
 
-  private val fontdata: String =
+  private val fontData: String =
     try {
       val filename = "data/" + "big" + charname + ".txt"
       val sb = new StringBuilder
@@ -22,6 +22,6 @@ class BigChar(val charname: Char) {
     }
 
   def print(): Unit = {
-    fontdata.foreach(scala.Predef.print)
+    scala.Predef.print(fontData)
   }
 }
