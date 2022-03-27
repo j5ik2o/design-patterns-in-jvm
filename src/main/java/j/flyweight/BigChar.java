@@ -7,10 +7,11 @@ import java.nio.file.Path;
 
 public class BigChar {
     private final char charname;
-    private String fontdata;
+    private final String fontdata;
 
     public BigChar(char charname) {
         this.charname = charname;
+        String fontdata = null;
         try {
             String filename = "data/" + "big" + charname + ".txt";
             StringBuilder sb = new StringBuilder();
@@ -18,9 +19,11 @@ public class BigChar {
                 sb.append(line);
                 sb.append("\n");
             }
-            this.fontdata = sb.toString();
+            fontdata = sb.toString();
         } catch (IOException e) {
-            this.fontdata = charname + "?";
+            fontdata = charname + "?";
+        } finally {
+            this.fontdata = fontdata;
         }
     }
 
