@@ -2,18 +2,18 @@
 package j.flyweight;
 
 public class BigString {
-    private BigChar[] bigchars;
+    private BigChar[] bigChars;
 
     public BigString(String string) {
         BigCharFactory factory = BigCharFactory.getInstance();
-        bigchars = new BigChar[string.length()];
-        for (int i = 0; i < bigchars.length; i++) {
-            bigchars[i] = factory.getBigChar(string.charAt(i));
+        bigChars = new BigChar[string.length()];
+        for (int i = 0; i < bigChars.length; i++) {
+            bigChars[i] = factory.getBigChar(string.charAt(i));
         }
     }
 
     public void print() {
-        for (BigChar bc : bigchars) {
+        for (BigChar bc : bigChars) {
             bc.print();
         }
     }

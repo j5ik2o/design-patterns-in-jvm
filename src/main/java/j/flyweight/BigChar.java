@@ -13,7 +13,7 @@ public class BigChar {
         this.charname = charname;
         String fontdata = null;
         try {
-            String filename = "data/" + "big" + charname + ".txt";
+            String filename = "data/big" + charname + ".txt";
             StringBuilder sb = new StringBuilder();
             for (String line : Files.readAllLines(Path.of(filename))) {
                 sb.append(line);

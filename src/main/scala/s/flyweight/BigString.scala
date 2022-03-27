@@ -1,16 +1,14 @@
 /* (C) 2022 */
 package s.flyweight
 
-class BigString(val string: String) {
-  val factory: BigCharFactory = BigCharFactory.getInstance
-  private val bigchars: Array[BigChar] = new Array[BigChar](string.length)
+class BigString(string: String) {
 
-  for (i <- bigchars.indices) {
-    bigchars(i) = factory.getBigChar(string.charAt(i))
-  }
+  private val bigChars: Seq[BigChar] =
+    for (i <- 0 until string.length)
+      yield BigCharFactory.getBigChar(string.charAt(i))
 
   def print(): Unit = {
-    for (bc <- bigchars) {
+    for (bc <- bigChars) {
       bc.print()
     }
   }

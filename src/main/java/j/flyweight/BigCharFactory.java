@@ -1,11 +1,11 @@
 /* (C)2022 */
 package j.flyweight;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class BigCharFactory {
-    private Map<String, BigChar> pool = new HashMap<>();
+    private Map<String, BigChar> pool = new ConcurrentHashMap<>();
     private static BigCharFactory singleton = new BigCharFactory();
 
     private BigCharFactory() {}
@@ -14,8 +14,7 @@ public class BigCharFactory {
         return singleton;
     }
 
-    public synchronized BigChar getBigChar(char charname) {
-        BigChar bc = pool.getOrDefault(String.valueOf(charname), new BigChar(charname));
-        return bc;
+    public BigChar getBigChar(char charname) {
+        return pool.getOrDefault(String.valueOf(charname), new BigChar(charname));
     }
 }

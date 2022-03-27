@@ -1,22 +1,19 @@
 /* (C)2022 */
 package k.flyweight
 
-import j.flyweight.BigChar
-import j.flyweight.BigCharFactory
-
 class BigString(string: String) {
-  private val bigchars: Array<BigChar?>
+  
+  private val bigChars: Array<BigChar?>
 
   init {
-    val factory = BigCharFactory.getInstance()
-    bigchars = arrayOfNulls(string.length)
-    for (i in bigchars.indices) {
-      bigchars[i] = factory.getBigChar(string[i])
+    bigChars = arrayOfNulls(string.length)
+    for (i in bigChars.indices) {
+      bigChars[i] = BigCharFactory.getBigChar(string[i])
     }
   }
 
   fun print() {
-    for (bc in bigchars) {
+    for (bc in bigChars) {
       bc!!.print()
     }
   }

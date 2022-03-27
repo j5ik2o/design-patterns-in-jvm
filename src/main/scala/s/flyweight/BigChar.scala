@@ -6,11 +6,11 @@ import java.nio.file.Files
 import java.nio.file.Path
 import scala.jdk.CollectionConverters._
 
-class BigChar(charname: Char) {
+class BigChar(charName: Char) {
 
   private val fontData: String =
     try {
-      val filename = "data/" + "big" + charname + ".txt"
+      val filename = "data/big" + charName + ".txt"
       val sb = new StringBuilder
       for (line <- Files.readAllLines(Path.of(filename)).asScala) {
         sb.append(line)
@@ -18,7 +18,7 @@ class BigChar(charname: Char) {
       }
       sb.toString
     } catch {
-      case _: IOException => charname + "?"
+      case _: IOException => charName + "?"
     }
 
   def print(): Unit = {
