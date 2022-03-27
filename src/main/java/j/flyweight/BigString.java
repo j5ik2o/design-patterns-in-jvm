@@ -1,15 +1,16 @@
 /* (C)2022 */
 package j.flyweight;
 
+import java.util.List;
+
 public class BigString {
-    private BigChar[] bigChars;
+    private final List<BigChar> bigChars;
 
     public BigString(String string) {
-        BigCharFactory factory = BigCharFactory.getInstance();
-        bigChars = new BigChar[string.length()];
-        for (int i = 0; i < bigChars.length; i++) {
-            bigChars[i] = factory.getBigChar(string.charAt(i));
-        }
+        bigChars =
+                string.chars()
+                        .mapToObj(c -> BigCharFactory.getInstance().getBigChar((char) c))
+                        .toList();
     }
 
     public void print() {
