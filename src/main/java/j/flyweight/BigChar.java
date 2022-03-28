@@ -6,14 +6,14 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class BigChar {
-    private final char charname;
-    private final String fontdata;
+    private final char charName;
+    private final String fontData;
 
-    public BigChar(char charname) {
-        this.charname = charname;
+    public BigChar(char charName) {
+        this.charName = charName;
         String fontdata = null;
         try {
-            String filename = "data/big" + charname + ".txt";
+            String filename = "data/big" + charName + ".txt";
             StringBuilder sb = new StringBuilder();
             for (String line : Files.readAllLines(Path.of(filename))) {
                 sb.append(line);
@@ -21,13 +21,13 @@ public class BigChar {
             }
             fontdata = sb.toString();
         } catch (IOException e) {
-            fontdata = charname + "?";
+            fontdata = charName + "?";
         } finally {
-            this.fontdata = fontdata;
+            this.fontData = fontdata;
         }
     }
 
     public void print() {
-        System.out.print(fontdata);
+        System.out.print(fontData);
     }
 }

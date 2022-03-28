@@ -23,5 +23,5 @@ case class WinningStrategy(
   }
 
   override def study(win: Boolean): WinningStrategy =
-    WinningStrategy(this.seed, win, prevHand)
+    WinningStrategy(seed, win, prevHand)
 }
