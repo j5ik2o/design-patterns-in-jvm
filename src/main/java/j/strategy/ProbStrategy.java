@@ -5,7 +5,7 @@ import io.vavr.Tuple;
 import io.vavr.Tuple2;
 import java.util.Random;
 
-public class ProbStrategy implements Strategy, Cloneable {
+public class ProbStrategy implements Strategy {
     private final int seed;
     private final Random random;
     private final int prevHandValue;
