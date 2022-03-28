@@ -11,7 +11,7 @@ public class BigChar {
 
     public BigChar(char charName) {
         this.charName = charName;
-        String fontdata = null;
+        String fontData = null;
         try {
             String filename = "data/big" + charName + ".txt";
             StringBuilder sb = new StringBuilder();
@@ -19,11 +19,11 @@ public class BigChar {
                 sb.append(line);
                 sb.append("\n");
             }
-            fontdata = sb.toString();
+            fontData = sb.toString();
         } catch (IOException e) {
-            fontdata = charName + "?";
+            fontData = charName + "?";
         } finally {
-            this.fontData = fontdata;
+            this.fontData = fontData;
         }
     }
 
