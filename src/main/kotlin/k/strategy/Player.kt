@@ -1,41 +1,43 @@
+/* (C)2022 */
 package k.strategy
 
 class Player(private val name: String, private var strategy: Strategy) {
-    private var wincount = 0
-    private var losecount = 0
-    private var gamecount = 0
-    fun nextHand(): Hand {
-        val result = strategy.nextHand()
-        strategy = result.first
-        return result.second
-    }
+  private var wincount = 0
+  private var losecount = 0
+  private var gamecount = 0
 
-    fun win() {
-        strategy = strategy.study(true)
-        wincount++
-        gamecount++
-    }
+  fun nextHand(): Hand {
+    val result = strategy.nextHand()
+    strategy = result.first
+    return result.second
+  }
 
-    fun lose() {
-        strategy = strategy.study(false)
-        losecount++
-        gamecount++
-    }
+  fun win() {
+    strategy = strategy.study(true)
+    wincount++
+    gamecount++
+  }
 
-    fun even() {
-        gamecount++
-    }
+  fun lose() {
+    strategy = strategy.study(false)
+    losecount++
+    gamecount++
+  }
 
-    override fun toString(): String {
-        return ("["
-                + name
-                + ":"
-                + gamecount
-                + " games, "
-                + wincount
-                + " win, "
-                + losecount
-                + " lose"
-                + "]")
-    }
+  fun even() {
+    gamecount++
+  }
+
+  override fun toString(): String {
+    return ("[" +
+        name +
+        ":" +
+        gamecount +
+        " games, " +
+        wincount +
+        " win, " +
+        losecount +
+        " lose" +
+        "]")
+  }
 }

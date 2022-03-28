@@ -1,33 +1,37 @@
 /* (C) 2022 */
 package s.strategy
 
-class Player(var name: String, var strategy: Strategy) {
-  private var wincount = 0
-  private var losecount = 0
-  private var gamecount = 0
+case class Player(
+    name: String,
+    strategy: Strategy,
+    winCount: Int = 0,
+    loseCount: Int = 0,
+    gameCount: Int = 0
+) {
 
-  def nextHand: Hand = {
+  def nextHand: (Player, Hand) = {
     val result = strategy.nextHand
-    strategy = result._1
-    result._2
+    (copy(strategy = result._1), result._2)
   }
 
-  def win(): Unit = {
-    strategy = strategy.study(true)
-    wincount += 1
-    gamecount += 1
+  def win(): Player = {
+    copy(
+      strategy = strategy.study(true),
+      winCount = winCount + 1,
+      gameCount = gameCount + 1
+    )
   }
 
-  def lose(): Unit = {
-    strategy = strategy.study(false)
-    losecount += 1
-    gamecount += 1
+  def lose(): Player = {
+    copy(
+      strategy = strategy.study(false),
+      loseCount = loseCount + 1,
+      gameCount = gameCount + 1
+    )
   }
 
-  def even(): Unit = {
-    gamecount += 1
+  def even(): Player = {
+    copy(gameCount = gameCount + 1)
   }
 
-  override def toString: String =
-    "[" + name + ":" + gamecount + " games, " + wincount + " win, " + losecount + " lose" + "]"
 }

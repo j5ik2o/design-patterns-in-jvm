@@ -1,51 +1,59 @@
 /* (C)2022 */
 package j.strategy;
 
-public class Player {
-    private String name;
-    private Strategy strategy;
-    private int wincount;
-    private int losecount;
-    private int gamecount;
+import io.vavr.Tuple;
+import io.vavr.Tuple2;
 
-    public Player(String name, Strategy strategy) {
+public class Player {
+    private final String name;
+    private final Strategy strategy;
+    private final int winCount;
+    private final int loseCount;
+    private final int gameCount;
+
+    public Player(String name, Strategy strategy, int winCount, int loseCount, int gameCount) {
         this.name = name;
         this.strategy = strategy;
+        this.winCount = winCount;
+        this.loseCount = loseCount;
+        this.gameCount = gameCount;
     }
 
-    public Hand nextHand() {
+    public Player(String name, Strategy strategy) {
+        this(name, strategy, 0, 0, 0);
+    }
+
+    public Tuple2<Player, Hand> nextHand() {
         var result = strategy.nextHand();
-        strategy = result._1;
-        return result._2;
+        return Tuple.of(new Player(name, result._1), result._2);
     }
 
-    public void win() {
-        strategy = strategy.study(true);
-        wincount++;
-        gamecount++;
+    public Player win() {
+        return new Player(name, strategy.study(true), winCount + 1, loseCount, gameCount + 1);
     }
 
-    public void lose() {
-        strategy = strategy.study(false);
-        losecount++;
-        gamecount++;
+    public Player lose() {
+        return new Player(name, strategy.study(false), winCount, loseCount + 1, gameCount + 1);
     }
 
-    public void even() {
-        gamecount++;
+    public Player even() {
+        return new Player(name, strategy, winCount, loseCount, gameCount + 1);
     }
 
     @Override
     public String toString() {
-        return "["
+        return "Player{"
+                + "name='"
                 + name
-                + ":"
-                + gamecount
-                + " games, "
-                + wincount
-                + " win, "
-                + losecount
-                + " lose"
-                + "]";
+                + '\''
+                + ", strategy="
+                + strategy
+                + ", winCount="
+                + winCount
+                + ", loseCount="
+                + loseCount
+                + ", gameCount="
+                + gameCount
+                + '}';
     }
 }

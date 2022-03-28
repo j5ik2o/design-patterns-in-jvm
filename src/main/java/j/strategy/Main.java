@@ -8,25 +8,29 @@ public class Main {
             System.out.println("Example: java Main 314 15");
             System.exit(0);
         }
-        int seed1 = Integer.parseInt(args[0]);
-        int seed2 = Integer.parseInt(args[1]);
-        Player player1 = new Player("Taro", new WinningStrategy(seed1));
-        Player player2 = new Player("Hana", new ProbStrategy(seed2));
+        var seed1 = Integer.parseInt(args[0]);
+        var seed2 = Integer.parseInt(args[1]);
+        var player1 = new Player("Taro", new WinningStrategy(seed1));
+        var player2 = new Player("Hana", new ProbStrategy(seed2));
         for (int i = 0; i < 10000; i++) {
-            Hand nextHand1 = player1.nextHand();
-            Hand nextHand2 = player2.nextHand();
+            var nextHand1Result = player1.nextHand();
+            var nextHand2Result = player2.nextHand();
+            player1 = nextHand1Result._1;
+            player2 = nextHand2Result._1;
+            var nextHand1 = nextHand1Result._2;
+            var nextHand2 = nextHand2Result._2;
             if (nextHand1.isStrongerThan(nextHand2)) {
                 System.out.println("Winner:" + player1);
-                player1.win();
-                player2.lose();
+                player1 = player1.win();
+                player2 = player2.lose();
             } else if (nextHand2.isStrongerThan(nextHand1)) {
                 System.out.println("Winner:" + player2);
-                player1.lose();
-                player2.win();
+                player1 = player1.lose();
+                player2 = player2.win();
             } else {
                 System.out.println("Even...");
-                player1.even();
-                player2.even();
+                player1 = player1.even();
+                player2 = player2.even();
             }
         }
         System.out.println("Total result:");

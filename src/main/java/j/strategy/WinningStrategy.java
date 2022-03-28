@@ -9,7 +9,7 @@ import java.util.Random;
 public class WinningStrategy implements Strategy {
     private final int seed;
     private final Random random;
-    private boolean won = false;
+    private final boolean won;
     private final Optional<Hand> prevHand;
 
     public WinningStrategy(int seed, boolean won, Optional<Hand> prevHand) {
