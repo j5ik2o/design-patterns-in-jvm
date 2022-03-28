@@ -11,7 +11,7 @@ class ProbStrategy(
 ) extends Strategy {
   private val random = new Random(seed)
 
-  def this(seed: Int) {
+  def this(seed: Int) = {
     this(
       seed,
       0,
@@ -34,11 +34,7 @@ class ProbStrategy(
   }
 
   private def getSum(handValue: Int): Int = {
-    var sum = 0
-    for (i <- 0 until 3) {
-      sum += history(handValue)(i)
-    }
-    sum
+    history(handValue).sum
   }
 
   override def study(win: Boolean): Strategy = {

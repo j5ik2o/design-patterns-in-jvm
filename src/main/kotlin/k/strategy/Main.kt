@@ -1,10 +1,6 @@
 /* (C)2022 */
 package k.strategy
 
-import j.strategy.Player
-import j.strategy.ProbStrategy
-import j.strategy.WinningStrategy
-
 object Main {
   @JvmStatic
   fun main(args: Array<String>) {

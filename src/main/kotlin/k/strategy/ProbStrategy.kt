@@ -26,11 +26,7 @@ class ProbStrategy(
   }
 
   private fun getSum(handValue: Int): Int {
-    var sum = 0
-    for (i in 0..2) {
-      sum += history[handValue][i]
-    }
-    return sum
+      return history[handValue].sum()
   }
 
   override fun study(win: Boolean): Strategy {
