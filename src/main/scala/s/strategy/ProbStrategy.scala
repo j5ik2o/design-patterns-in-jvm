@@ -7,7 +7,7 @@ case class ProbStrategy(
     seed: Int,
     prevHandValue: Int,
     currentHandValue: Int,
-    history: Array[Array[Int]]
+    history: Vector[Vector[Int]]
 ) extends Strategy {
   private val random = new Random(seed)
 
@@ -16,7 +16,7 @@ case class ProbStrategy(
       seed,
       0,
       0,
-      Array(Array(1, 1, 1), Array(1, 1, 1), Array(1, 1, 1))
+      Vector(Vector(1, 1, 1), Vector(1, 1, 1), Vector(1, 1, 1))
     )
   }
 
@@ -40,15 +40,21 @@ case class ProbStrategy(
   }
 
   override def study(win: Boolean): ProbStrategy = {
-    val history = Array(Array(1, 1, 1), Array(1, 1, 1), Array(1, 1, 1))
-    System.arraycopy(this.history, 0, history, 0, this.history.length)
-    val result =
-      ProbStrategy(seed, prevHandValue, currentHandValue, history)
-    if (win) result.history(prevHandValue)(currentHandValue) += 1
-    else {
-      result.history(prevHandValue)((currentHandValue + 1) % 3) += 1
-      result.history(prevHandValue)((currentHandValue + 2) % 3) += 1
+    val h = if (win) {
+      val v = history(prevHandValue)(currentHandValue)
+      val up = history(prevHandValue).updated(currentHandValue, v + 1)
+      history.updated(prevHandValue, up)
+    } else {
+      val v = history(prevHandValue)((currentHandValue + 1) % 3)
+      val up = history(prevHandValue).updated((currentHandValue + 1) % 3, v + 1)
+      val history_updated = history.updated(prevHandValue, up)
+      val v2 = history_updated(prevHandValue)((currentHandValue + 2) % 3)
+      val up2 = history_updated(prevHandValue).updated(
+        (currentHandValue + 2) % 3,
+        v2 + 1
+      )
+      history_updated.updated(prevHandValue, up2)
     }
-    result
+    ProbStrategy(seed, prevHandValue, currentHandValue, h)
   }
 }
