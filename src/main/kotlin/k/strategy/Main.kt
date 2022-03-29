@@ -4,15 +4,8 @@ package k.strategy
 object Main {
   @JvmStatic
   fun main(args: Array<String>) {
-    if (args.size != 2) {
-      println("Usage: java Main randomseed1 randomseed2")
-      println("Example: java Main 314 15")
-      System.exit(0)
-    }
-    val seed1 = args[0].toInt()
-    val seed2 = args[1].toInt()
-    val player1 = Player("Taro", WinningStrategy(seed1))
-    val player2 = Player("Hana", ProbStrategy(seed2))
+    val player1 = Player("Taro", WinningStrategy())
+    val player2 = Player("Hana", ProbStrategy())
     for (i in 0..9999) {
       val nextHand1 = player1.nextHand()
       val nextHand2 = player2.nextHand()

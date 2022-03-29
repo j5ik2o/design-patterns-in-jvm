@@ -1,19 +1,17 @@
 /* (C) 2022 */
 package s.strategy
 
-import java.util.Random
+import java.security.SecureRandom
 
 case class ProbStrategy(
-    seed: Int,
     prevHandValue: Int,
     currentHandValue: Int,
     history: Vector[Vector[Int]]
 ) extends Strategy {
-  private val random = new Random(seed)
+  private val random = new SecureRandom()
 
-  def this(seed: Int) = {
+  def this() = {
     this(
-      seed,
       0,
       0,
       Vector(Vector(1, 1, 1), Vector(1, 1, 1), Vector(1, 1, 1))
@@ -30,7 +28,7 @@ case class ProbStrategy(
         1
       else 2
     (
-      ProbStrategy(seed, currentHandValue, handValue, history),
+      ProbStrategy(currentHandValue, handValue, history),
       Hand.getHand(handValue)
     )
   }
@@ -55,6 +53,6 @@ case class ProbStrategy(
       )
       history_updated.updated(prevHandValue, up2)
     }
-    ProbStrategy(seed, prevHandValue, currentHandValue, h)
+    ProbStrategy(prevHandValue, currentHandValue, h)
   }
 }

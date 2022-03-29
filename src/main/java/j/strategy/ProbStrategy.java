@@ -3,26 +3,23 @@ package j.strategy;
 
 import io.vavr.Tuple;
 import io.vavr.Tuple2;
-import java.util.Random;
+import java.security.SecureRandom;
 
 public class ProbStrategy implements Strategy {
-    private final int seed;
-    private final Random random;
+    private final SecureRandom random;
     private final int prevHandValue;
     private final int currentHandValue;
     private final int[][] history;
 
-    public ProbStrategy(int seed, int prevHandValue, int currentHandValue, int[][] history) {
-        this.seed = seed;
-        this.random = new Random(seed);
+    public ProbStrategy(int prevHandValue, int currentHandValue, int[][] history) {
+        this.random = new SecureRandom();
         this.prevHandValue = prevHandValue;
         this.currentHandValue = currentHandValue;
         this.history = history;
     }
 
-    public ProbStrategy(int seed) {
+    public ProbStrategy() {
         this(
-                seed,
                 0,
                 0,
                 new int[][] {
@@ -50,7 +47,7 @@ public class ProbStrategy implements Strategy {
             handValue = 2;
         }
         return Tuple.of(
-                new ProbStrategy(this.seed, this.currentHandValue, handValue, history),
+                new ProbStrategy(this.currentHandValue, handValue, history),
                 Hand.getHand(handValue));
     }
 
@@ -76,7 +73,7 @@ public class ProbStrategy implements Strategy {
             },
         };
         System.arraycopy(this.history, 0, history, 0, this.history.length);
-        var result = new ProbStrategy(seed, prevHandValue, currentHandValue, history);
+        var result = new ProbStrategy(prevHandValue, currentHandValue, history);
         if (win) {
             result.history[prevHandValue][currentHandValue]++;
         } else {

@@ -25,7 +25,7 @@ public class Player {
 
     public Tuple2<Player, Hand> nextHand() {
         var result = strategy.nextHand();
-        return Tuple.of(new Player(name, result._1), result._2);
+        return Tuple.of(new Player(name, result._1, winCount, loseCount, gameCount), result._2);
     }
 
     public Player win() {

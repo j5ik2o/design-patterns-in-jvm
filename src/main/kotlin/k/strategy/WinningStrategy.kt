@@ -1,25 +1,22 @@
 /* (C)2022 */
 package k.strategy
 
-import java.util.*
+import java.security.SecureRandom
 
-class WinningStrategy(
-    private val seed: Int,
-    private val won: Boolean = false,
-    private val prevHand: Hand? = null
-) : Strategy {
-  private val random: Random = Random(seed.toLong())
+class WinningStrategy(private val won: Boolean = false, private val prevHand: Hand? = null) :
+    Strategy {
+  private val random = SecureRandom()
 
   override fun nextHand(): Pair<Strategy, Hand> {
     if (!won) {
       val ph = Hand.getHand(random.nextInt(3))
-      val st = WinningStrategy(seed, won, ph)
+      val st = WinningStrategy(won, ph)
       return Pair(st, ph)
     }
     return Pair(this, prevHand!!)
   }
 
   override fun study(win: Boolean): Strategy {
-    return WinningStrategy(seed, win, prevHand)
+    return WinningStrategy(win, prevHand)
   }
 }

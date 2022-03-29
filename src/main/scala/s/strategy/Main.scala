@@ -3,15 +3,8 @@ package s.strategy
 
 object Main {
   def main(args: Array[String]): Unit = {
-    if (args.length != 2) {
-      System.out.println("Usage: java Main randomseed1 randomseed2")
-      System.out.println("Example: java Main 314 15")
-      System.exit(0)
-    }
-    val seed1 = args(0).toInt
-    val seed2 = args(1).toInt
-    var player1 = Player("Taro", new WinningStrategy(seed1))
-    var player2 = Player("Hana", new ProbStrategy(seed2))
+    var player1 = Player("Taro", new WinningStrategy())
+    var player2 = Player("Hana", new ProbStrategy())
     for (i <- 0 until 10000) {
       val nextHand1Result = player1.nextHand
       player1 = nextHand1Result._1

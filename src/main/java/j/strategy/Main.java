@@ -3,15 +3,8 @@ package j.strategy;
 
 public class Main {
     public static void main(String[] args) {
-        if (args.length != 2) {
-            System.out.println("Usage: java Main randomseed1 randomseed2");
-            System.out.println("Example: java Main 314 15");
-            System.exit(0);
-        }
-        var seed1 = Integer.parseInt(args[0]);
-        var seed2 = Integer.parseInt(args[1]);
-        var player1 = new Player("Taro", new WinningStrategy(seed1));
-        var player2 = new Player("Hana", new ProbStrategy(seed2));
+        Player player1 = new Player("Taro", new WinningStrategy());
+        Player player2 = new Player("Hana", new ProbStrategy());
         for (int i = 0; i < 10000; i++) {
             var nextHand1Result = player1.nextHand();
             var nextHand2Result = player2.nextHand();
