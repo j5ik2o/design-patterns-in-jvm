@@ -2,22 +2,21 @@
 package s.strategy
 
 import java.security.SecureRandom
-import java.util.Optional
 
 case class WinningStrategy(
     won: Boolean,
-    prevHand: Optional[Hand]
+    prevHand: Option[Hand]
 ) extends Strategy {
   val random = new SecureRandom()
 
   def this() {
-    this(false, Optional.empty)
+    this(false, None)
   }
 
   override def nextHand: (Strategy, Hand) = {
     if (!won) {
       val ph = Hand.getHand(random.nextInt(3))
-      val st = WinningStrategy(won, Optional.of(ph))
+      val st = WinningStrategy(won, Some(ph))
       (st, ph)
     } else (this, prevHand.get)
   }
