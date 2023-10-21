@@ -1,5 +1,5 @@
 /* (C)2022 */
-package j.template_method;
+package j.template_method.inheritance;
 
 public class Main {
     public static void main(String[] args) {

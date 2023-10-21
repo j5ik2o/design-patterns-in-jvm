@@ -1,5 +1,5 @@
 /* (C)2022 */
-package j.template_method;
+package j.template_method.inheritance;
 
 public abstract class AbstractDisplay {
     public abstract void open();

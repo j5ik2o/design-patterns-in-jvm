@@ -1,5 +1,5 @@
 /* (C)2022 */
-package j.template_method;
+package j.template_method.inheritance;
 
 public class CharDisplay extends AbstractDisplay {
     private final char ch;
@@ -20,6 +20,6 @@ public class CharDisplay extends AbstractDisplay {
 
     @Override
     public void close() {
-        System.out.println(">>");
+        System.out.print(ch);
     }
 }

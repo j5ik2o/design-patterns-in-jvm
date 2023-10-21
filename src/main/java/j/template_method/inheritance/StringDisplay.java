@@ -1,5 +1,5 @@
 /* (C)2022 */
-package j.template_method;
+package j.template_method.inheritance;
 
 public class StringDisplay extends AbstractDisplay {
     private final String string;
