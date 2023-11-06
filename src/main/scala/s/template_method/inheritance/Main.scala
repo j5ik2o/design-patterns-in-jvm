@@ -1,5 +1,5 @@
 /* (C) 2022 */
-package s.template_method
+package s.template_method.inheritance
 
 object Main {
   def main(args: Array[String]): Unit = {

@@ -1,7 +1,9 @@
-/* (C)2022 */
-package k.template_method
+package k.template_method.delegate
 
-class StringDisplay(private val string: String) : AbstractDisplay() {
+import j.template_method.delegate.DisplayDelegate
+
+
+class StringDisplay(private val string: String) : DisplayDelegate {
     private val width: Int = string.length
 
     override fun open() {

@@ -1,5 +1,5 @@
 /* (C)2022 */
-package k.template_method
+package k.template_method.inheritance
 
 object Main {
     @JvmStatic

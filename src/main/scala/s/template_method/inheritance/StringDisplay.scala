@@ -1,5 +1,5 @@
 /* (C) 2022 */
-package s.template_method
+package s.template_method.inheritance
 
 class StringDisplay(val string: String) extends AbstractDisplay {
   val width: Int = string.length

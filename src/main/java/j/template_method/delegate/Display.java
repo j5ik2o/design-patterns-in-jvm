@@ -1,11 +1,11 @@
 package j.template_method.delegate;
 
 public final class Display {
-    private final DisplayDelete opener;
-    private final DisplayDelete printer;
-    private final DisplayDelete closer;
+    private final DisplayDelegate opener;
+    private final DisplayDelegate printer;
+    private final DisplayDelegate closer;
 
-    public Display(DisplayDelete opener, DisplayDelete printer, DisplayDelete closer) {
+    public Display(DisplayDelegate opener, DisplayDelegate printer, DisplayDelegate closer) {
         this.opener = opener;
         this.printer = printer;
         this.closer = closer;

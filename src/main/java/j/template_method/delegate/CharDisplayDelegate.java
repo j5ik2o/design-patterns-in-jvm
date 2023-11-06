@@ -1,9 +1,9 @@
 package j.template_method.delegate;
 
-public class CharDisplayDelete implements DisplayDelete {
+public class CharDisplayDelegate implements DisplayDelegate {
     private final char ch;
 
-    public CharDisplayDelete(char ch) {
+    public CharDisplayDelegate(char ch) {
         this.ch = ch;
     }
 

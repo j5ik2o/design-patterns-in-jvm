@@ -1,6 +1,6 @@
 package j.template_method.delegate;
 
-public final class StringDisplay implements DisplayDelete {
+public final class StringDisplay implements DisplayDelegate {
     private final String string;
     private final int width;
 

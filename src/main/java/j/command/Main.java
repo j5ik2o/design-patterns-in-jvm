@@ -5,8 +5,12 @@ import j.command.command.Command;
 import j.command.command.MacroCommand;
 import j.command.drawer.DrawCanvas;
 import j.command.drawer.DrawCommand;
-import java.awt.event.*;
+
 import javax.swing.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 
 public class Main extends JFrame implements MouseMotionListener, WindowListener {
     private final MacroCommand history = new MacroCommand();
@@ -53,8 +57,19 @@ public class Main extends JFrame implements MouseMotionListener, WindowListener 
     }
 
     @Override
-    public void windowActivated(WindowEvent e) {}
+    public void windowActivated(WindowEvent e) {
 
+    }
+
+    String method_1(boolean flag) {
+        String hensu_1 = "";
+        if (flag == true) {
+            hensu_1 = "trick";
+        } else if (flag != true) {
+            hensu_1 = "treat";
+        }
+        return hensu_1;
+    }
     @Override
     public void windowClosed(WindowEvent e) {}
 
