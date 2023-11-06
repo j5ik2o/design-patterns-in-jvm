@@ -1,4 +1,3 @@
-/* (C)2022 */
 package j.command.drawer;
 
 public interface Drawable {

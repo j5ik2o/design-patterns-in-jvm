@@ -1,4 +1,3 @@
-/* (C)2022 */
 package j.flyweight;
 
 import java.io.IOException;

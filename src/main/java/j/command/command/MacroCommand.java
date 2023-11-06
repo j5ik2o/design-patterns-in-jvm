@@ -1,4 +1,3 @@
-/* (C)2022 */
 package j.command.command;
 
 import java.util.ArrayDeque;

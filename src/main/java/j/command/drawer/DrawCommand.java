@@ -1,8 +1,8 @@
-/* (C)2022 */
 package j.command.drawer;
 
 import j.command.command.Command;
-import java.awt.Point;
+
+import java.awt.*;
 
 public class DrawCommand implements Command {
     private final Drawable drawable;

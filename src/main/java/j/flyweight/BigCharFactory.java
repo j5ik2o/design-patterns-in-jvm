@@ -1,4 +1,3 @@
-/* (C)2022 */
 package j.flyweight;
 
 import java.util.Map;
@@ -8,7 +7,8 @@ public class BigCharFactory {
     private final Map<String, BigChar> pool = new ConcurrentHashMap<>();
     private static final BigCharFactory singleton = new BigCharFactory();
 
-    private BigCharFactory() {}
+    private BigCharFactory() {
+    }
 
     public static BigCharFactory getInstance() {
         return singleton;

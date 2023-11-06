@@ -1,10 +1,8 @@
-/* (C)2022 */
 package j.command.drawer;
 
 import j.command.command.MacroCommand;
-import java.awt.Canvas;
-import java.awt.Color;
-import java.awt.Graphics;
+
+import java.awt.*;
 
 public class DrawCanvas extends Canvas implements Drawable {
     private final Color color = Color.red;

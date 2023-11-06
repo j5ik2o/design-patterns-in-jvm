@@ -1,4 +1,3 @@
-/* (C)2022 */
 package j.flyweight;
 
 import java.util.List;
@@ -9,7 +8,8 @@ public class BigString {
 
     public BigString(String string) {
         bigChars =
-                string.chars()
+                string
+                        .chars()
                         .mapToObj(c -> BigCharFactory.getInstance().getBigChar((char) c))
                         .collect(Collectors.toList());
     }
