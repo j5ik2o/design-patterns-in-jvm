@@ -61,15 +61,6 @@ public class Main extends JFrame implements MouseMotionListener, WindowListener 
 
     }
 
-    String method_1(boolean flag) {
-        String hensu_1 = "";
-        if (flag == true) {
-            hensu_1 = "trick";
-        } else if (flag != true) {
-            hensu_1 = "treat";
-        }
-        return hensu_1;
-    }
     @Override
     public void windowClosed(WindowEvent e) {}
 
