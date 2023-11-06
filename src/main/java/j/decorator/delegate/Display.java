@@ -7,6 +7,18 @@ public class Display {
         this.delegate = delegate;
     }
 
+    public static Display ofString(String string) {
+        return new Display(new StringDisplayDelegate(string));
+    }
+
+    public static Display ofSideBorder(Display display, char ch) {
+        return new Display(new SideBorderDelegate(display, ch));
+    }
+
+    public static Display ofFullBorder(Display display) {
+        return new Display(new FullBorderDelegate(display));
+    }
+
     public int getColumns() {
         return delegate.getColumns();
     }
