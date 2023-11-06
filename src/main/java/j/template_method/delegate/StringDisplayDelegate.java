@@ -1,10 +1,10 @@
 package j.template_method.delegate;
 
-public final class StringDisplay implements DisplayDelegate {
+public final class StringDisplayDelegate implements DisplayDelegate {
     private final String string;
     private final int width;
 
-    public StringDisplay(String string) {
+    public StringDisplayDelegate(String string) {
         this.string = string;
         this.width = string.length();
     }

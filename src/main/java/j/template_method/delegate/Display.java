@@ -1,22 +1,19 @@
 package j.template_method.delegate;
 
 public final class Display {
-    private final DisplayDelegate opener;
-    private final DisplayDelegate printer;
-    private final DisplayDelegate closer;
 
-    public Display(DisplayDelegate opener, DisplayDelegate printer, DisplayDelegate closer) {
-        this.opener = opener;
-        this.printer = printer;
-        this.closer = closer;
+    private final DisplayDelegate delegate;
+
+    public Display(DisplayDelegate delegate) {
+        this.delegate = delegate;
     }
 
-    public final void display() {
-        opener.open();
+    public void display() {
+        delegate.open();
         for (int i = 0; i < 5; i++) {
-            printer.print();
+            delegate.print();
         }
-        closer.close();
+        delegate.close();
     }
 
 }
