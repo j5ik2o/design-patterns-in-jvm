@@ -29,10 +29,6 @@ public class FullBorderDelegate implements DisplayDelegate {
     }
 
     private String makeLine(char ch, int count) {
-        StringBuffer buf = new StringBuffer();
-        for (int i = 0; i < count; i++) {
-            buf.append(ch);
-        }
-        return buf.toString();
+        return String.valueOf(ch).repeat(Math.max(0, count));
     }
 }
