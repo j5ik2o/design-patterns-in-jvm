@@ -1,12 +1,12 @@
-/* (C)2022 */
 package j.strategy;
 
 import io.vavr.Tuple;
 import io.vavr.Tuple2;
+
 import java.security.SecureRandom;
 import java.util.Optional;
 
-public class WinningStrategy implements Strategy {
+public final class WinningStrategy implements Strategy {
     private final SecureRandom random;
     private final boolean won;
     private final Optional<Hand> prevHand;

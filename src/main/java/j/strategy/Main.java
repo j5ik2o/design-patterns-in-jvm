@@ -1,7 +1,7 @@
 /* (C)2022 */
 package j.strategy;
 
-public class Main {
+public final class Main {
     public static void main(String[] args) {
         Player player1 = new Player("Taro", new WinningStrategy());
         Player player2 = new Player("Hana", new ProbStrategy());

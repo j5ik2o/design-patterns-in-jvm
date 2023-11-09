@@ -1,6 +1,6 @@
 package j.decorator.delegate;
 
-public class FullBorderDelegate implements DisplayDelegate {
+public final class FullBorderDelegate implements DisplayDelegate {
     private final Display display;
 
     public FullBorderDelegate(Display display) {

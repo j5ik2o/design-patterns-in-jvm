@@ -4,7 +4,7 @@ import j.command.command.Command;
 
 import java.awt.*;
 
-public class DrawCommand implements Command {
+public final class DrawCommand implements Command {
     private final Drawable drawable;
 
     private final Point position;

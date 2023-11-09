@@ -4,7 +4,7 @@ package j.factory_method.delegate;
 import j.factory_method.delegate.framework.Factory;
 import j.factory_method.delegate.idcard.IDCardFactoryDelegate;
 
-public class Main {
+public final class Main {
     public static void main(String[] args) {
         Factory factory = new Factory(new IDCardFactoryDelegate());
         var card1 = factory.create("Junichi Kato");

@@ -3,9 +3,10 @@ package j.strategy;
 
 import io.vavr.Tuple;
 import io.vavr.Tuple2;
+
 import java.security.SecureRandom;
 
-public class ProbStrategy implements Strategy {
+public final class ProbStrategy implements Strategy {
     private final SecureRandom random;
     private final int prevHandValue;
     private final int currentHandValue;

@@ -1,6 +1,6 @@
 package j.decorator.inheritance;
 
-public class SideBorder extends Border {
+public final class SideBorder extends Border {
     private final char borderChar;
 
     public SideBorder(Display display, char ch) {

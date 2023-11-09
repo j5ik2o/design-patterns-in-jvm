@@ -2,7 +2,7 @@ package j.factory_method.delegate.idcard;
 
 import j.factory_method.delegate.framework.Product;
 
-public class IDCard implements Product {
+public final class IDCard implements Product {
     private final String owner;
 
     public IDCard(String owner) {

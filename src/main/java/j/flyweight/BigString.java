@@ -3,7 +3,7 @@ package j.flyweight;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class BigString {
+public final class BigString {
     private final List<BigChar> bigChars;
 
     public BigString(String string) {

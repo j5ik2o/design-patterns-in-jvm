@@ -1,6 +1,6 @@
 package j.template_method.delegate;
 
-public class CharDisplayDelegate implements DisplayDelegate {
+public final class CharDisplayDelegate implements DisplayDelegate {
     private final char ch;
 
     public CharDisplayDelegate(char ch) {

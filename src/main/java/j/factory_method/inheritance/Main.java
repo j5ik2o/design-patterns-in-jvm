@@ -3,7 +3,7 @@ package j.factory_method.inheritance;
 import j.factory_method.inheritance.framework.Factory;
 import j.factory_method.inheritance.idcard.IDCardFactory;
 
-public class Main {
+public final class Main {
     public static void main(String[] args) {
         Factory factory = new IDCardFactory();
         var card1 = factory.create("Junichi Kato");

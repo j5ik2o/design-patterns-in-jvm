@@ -1,6 +1,6 @@
 package j.decorator.delegate;
 
-public class StringDisplayDelegate implements DisplayDelegate {
+public final class StringDisplayDelegate implements DisplayDelegate {
     private final String string;
 
     public StringDisplayDelegate(String string) {

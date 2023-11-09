@@ -3,7 +3,7 @@ package j.flyweight;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class BigCharFactory {
+public final class BigCharFactory {
     private final Map<String, BigChar> pool = new ConcurrentHashMap<>();
     private static final BigCharFactory singleton = new BigCharFactory();
 
@@ -14,7 +14,7 @@ public class BigCharFactory {
         return singleton;
     }
 
-    public BigChar getBigChar(char charname) {
-        return pool.getOrDefault(String.valueOf(charname), new BigChar(charname));
+    public BigChar getBigChar(char charName) {
+        return pool.getOrDefault(String.valueOf(charName), new BigChar(charName));
     }
 }

@@ -1,6 +1,6 @@
 package j.decorator.delegate;
 
-public class Display {
+public final class Display {
     private final DisplayDelegate delegate;
 
     public Display(DisplayDelegate delegate) {

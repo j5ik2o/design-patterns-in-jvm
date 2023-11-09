@@ -4,7 +4,7 @@ package j.strategy;
 import io.vavr.Tuple;
 import io.vavr.Tuple2;
 
-public class Player {
+public final class Player {
     private final String name;
     private final Strategy strategy;
     private final int winCount;

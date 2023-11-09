@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public class BigChar {
+public final class BigChar {
     private final char charName;
     private final String fontData;
 

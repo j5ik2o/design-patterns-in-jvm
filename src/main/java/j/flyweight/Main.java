@@ -1,6 +1,6 @@
 package j.flyweight;
 
-public class Main {
+public final class Main {
     public static void main(String[] args) {
         if (args.length == 0) {
             System.out.println("Usage: java Main digits");

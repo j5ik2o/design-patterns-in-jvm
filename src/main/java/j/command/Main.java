@@ -11,7 +11,7 @@ import java.awt.event.MouseMotionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
-public class Main extends JFrame implements MouseMotionListener, WindowListener {
+public final class Main extends JFrame implements MouseMotionListener, WindowListener {
     private final MacroCommand history = new MacroCommand();
     private final DrawCanvas canvas = new DrawCanvas(400, 400, history);
 

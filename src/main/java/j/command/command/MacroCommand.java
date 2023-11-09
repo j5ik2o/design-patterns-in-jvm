@@ -3,7 +3,7 @@ package j.command.command;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-public class MacroCommand implements Command {
+public final class MacroCommand implements Command {
     private final Deque<Command> commands = new ArrayDeque<>();
 
     @Override

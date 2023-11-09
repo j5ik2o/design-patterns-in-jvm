@@ -1,7 +1,7 @@
 /* (C)2022 */
 package j.template_method.inheritance;
 
-public class CharDisplay extends AbstractDisplay {
+public final class CharDisplay extends AbstractDisplay {
     private final char ch;
 
     public CharDisplay(char ch) {

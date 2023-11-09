@@ -4,7 +4,7 @@ import j.command.command.MacroCommand;
 
 import java.awt.*;
 
-public class DrawCanvas extends Canvas implements Drawable {
+public final class DrawCanvas extends Canvas implements Drawable {
     private final Color color = Color.red;
     private final int radius = 6;
     private final MacroCommand history;
