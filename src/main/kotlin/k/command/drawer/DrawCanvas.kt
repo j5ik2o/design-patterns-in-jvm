@@ -1,10 +1,9 @@
-/* (C)2022 */
 package k.command.drawer
 
+import k.command.command.MacroCommand
 import java.awt.Canvas
 import java.awt.Color
 import java.awt.Graphics
-import k.command.command.MacroCommand
 
 class DrawCanvas(width: Int, height: Int, history: MacroCommand) : Canvas(), Drawable {
   private val color = Color.red

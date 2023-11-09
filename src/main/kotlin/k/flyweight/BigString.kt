@@ -1,4 +1,3 @@
-/* (C)2022 */
 package k.flyweight
 
 class BigString(string: String) {

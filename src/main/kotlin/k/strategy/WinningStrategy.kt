@@ -1,4 +1,3 @@
-/* (C)2022 */
 package k.strategy
 
 import java.security.SecureRandom

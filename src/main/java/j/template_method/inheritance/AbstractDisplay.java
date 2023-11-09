@@ -1,4 +1,3 @@
-/* (C)2022 */
 package j.template_method.inheritance;
 
 public abstract class AbstractDisplay {

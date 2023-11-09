@@ -1,4 +1,3 @@
-/* (C)2022 */
 package k.strategy
 
 enum class Hand(private val handName: String, private val handValue: Int) {

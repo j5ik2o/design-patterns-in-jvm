@@ -1,9 +1,8 @@
-/* (C) 2022 */
 package s.strategy
 
 import java.security.SecureRandom
 
-case class WinningStrategy(
+final case class WinningStrategy(
     won: Boolean,
     prevHand: Option[Hand]
 ) extends Strategy {

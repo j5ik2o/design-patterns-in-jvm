@@ -1,7 +1,6 @@
-/* (C) 2022 */
 package s.strategy
 
-case class Player(
+final case class Player(
     name: String,
     strategy: Strategy,
     winCount: Int = 0,

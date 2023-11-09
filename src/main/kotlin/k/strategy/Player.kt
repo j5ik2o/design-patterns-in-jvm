@@ -1,4 +1,3 @@
-/* (C)2022 */
 package k.strategy
 
 class Player(private val name: String, private var strategy: Strategy) {

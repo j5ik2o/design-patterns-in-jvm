@@ -1,9 +1,8 @@
-/* (C) 2022 */
 package s.strategy
 
 import java.security.SecureRandom
 
-case class ProbStrategy(
+final case class ProbStrategy(
     prevHandValue: Int,
     currentHandValue: Int,
     history: Vector[Vector[Int]]

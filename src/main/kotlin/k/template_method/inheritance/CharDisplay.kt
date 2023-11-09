@@ -1,4 +1,3 @@
-/* (C)2022 */
 package k.template_method.inheritance
 
 class CharDisplay(val ch: Char) : AbstractDisplay() {

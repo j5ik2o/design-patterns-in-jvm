@@ -1,4 +1,3 @@
-/* (C)2022 */
 package j.strategy;
 
 import io.vavr.Tuple;

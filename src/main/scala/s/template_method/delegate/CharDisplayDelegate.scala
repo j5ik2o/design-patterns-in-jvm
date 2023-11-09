@@ -1,6 +1,6 @@
 package s.template_method.delegate
 
-class CharDisplayDelegate(private val ch: Char) extends DisplayDelegate {
+final class CharDisplayDelegate(private val ch: Char) extends DisplayDelegate {
   override def open(): Unit = {
     Console.print("<<")
   }

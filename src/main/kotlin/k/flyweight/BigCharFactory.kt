@@ -1,4 +1,3 @@
-/* (C)2022 */
 package k.flyweight
 
 import java.util.concurrent.ConcurrentHashMap

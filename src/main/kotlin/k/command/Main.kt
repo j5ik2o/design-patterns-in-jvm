@@ -1,15 +1,17 @@
-/* (C)2022 */
 package k.command
 
-import java.awt.event.*
-import javax.swing.Box
-import javax.swing.BoxLayout
-import javax.swing.JButton
-import javax.swing.JFrame
 import k.command.command.Command
 import k.command.command.MacroCommand
 import k.command.drawer.DrawCanvas
 import k.command.drawer.DrawCommand
+import java.awt.event.MouseEvent
+import java.awt.event.MouseMotionListener
+import java.awt.event.WindowEvent
+import java.awt.event.WindowListener
+import javax.swing.Box
+import javax.swing.BoxLayout
+import javax.swing.JButton
+import javax.swing.JFrame
 
 class Main(title: String?) : JFrame(title), MouseMotionListener, WindowListener {
   private val history = MacroCommand()
