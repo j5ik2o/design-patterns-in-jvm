@@ -5,5 +5,5 @@ final class SideBorder(display: Display, private val borderChar: Char) extends B
 
   override def rows: Int = display.rows
 
-  override def rowText(row: Int): String = borderChar + display.rowText(row) + borderChar
+  override def rowText(row: Int): String = borderChar.toString + display.rowText(row) + borderChar.toString
 }

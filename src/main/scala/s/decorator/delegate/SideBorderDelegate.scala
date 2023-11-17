@@ -5,5 +5,5 @@ final class SideBorderDelegate(private val display: Display, private val borderC
 
   override def rows: Int = display.rows
 
-  override def rowText(row: Int): String = borderChar + display.rowText(row) + borderChar
+  override def rowText(row: Int): String = borderChar.toString + display.rowText(row) + borderChar.toString
 }

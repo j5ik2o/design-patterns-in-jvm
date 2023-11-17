@@ -8,7 +8,7 @@ final case class WinningStrategy(
 ) extends Strategy {
   val random = new SecureRandom()
 
-  def this() {
+  def this() = {
     this(false, None)
   }
 

@@ -2,8 +2,7 @@
 package s.flyweight
 
 import java.io.IOException
-import java.nio.file.Files
-import java.nio.file.Path
+import java.nio.file.{Files, Path}
 import scala.jdk.CollectionConverters._
 
 class BigChar(charName: Char) {
@@ -18,7 +17,7 @@ class BigChar(charName: Char) {
       }
       sb.toString
     } catch {
-      case _: IOException => charName + "?"
+      case _: IOException => charName.toString + "?"
     }
 
   def print(): Unit = {
