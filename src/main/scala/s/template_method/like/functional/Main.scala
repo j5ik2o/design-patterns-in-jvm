@@ -1,4 +1,4 @@
-package s.template_method.delegate
+package s.template_method.like.functional
 
 object Main extends App {
   val d1 = DisplayFactory.createChar('H')
