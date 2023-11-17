@@ -28,14 +28,12 @@ public final class SupportDelegate {
     }
 
     public void support(@NotNull Trouble trouble) {
-        for (SupportDelegate obj = this; true; obj = obj.next) {
-            if (resolver.resolve(trouble)) {
-                obj.done(trouble);
-                break;
-            } else if (obj.next == null) {
-                obj.fail(trouble);
-                break;
-            }
+        if (resolver.resolve(trouble)) {
+            done(trouble);
+        } else if (next != null) {
+            next.support(trouble);
+        } else {
+            fail(trouble);
         }
     }
 

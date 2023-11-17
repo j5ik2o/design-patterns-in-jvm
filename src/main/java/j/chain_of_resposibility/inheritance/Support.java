@@ -20,14 +20,12 @@ public abstract class Support {
     }
 
     public void support(Trouble trouble) {
-        for (Support obj = this; true; obj = obj.next) {
-            if (obj.resolve(trouble)) {
-                obj.done(trouble);
-                break;
-            } else if (obj.next == null) {
-                obj.fail(trouble);
-                break;
-            }
+        if (resolve(trouble)) {
+            done(trouble);
+        } else if (next != null) {
+            next.support(trouble);
+        } else {
+            fail(trouble);
         }
     }
 
