@@ -1,4 +1,3 @@
-/* (C) 2022 */
 package s.strategy
 
 trait Strategy {

@@ -1,9 +1,7 @@
-/* (C) 2022 */
 package s.command
 
 import s.command.command.MacroCommand
-import s.command.drawer.DrawCanvas
-import s.command.drawer.DrawCommand
+import s.command.drawer.{DrawCanvas, DrawCommand}
 
 import java.awt.event._
 import javax.swing._

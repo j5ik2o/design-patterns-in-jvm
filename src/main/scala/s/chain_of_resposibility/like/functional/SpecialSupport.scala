@@ -8,4 +8,5 @@ object SpecialSupport {
     case trouble if trouble.number == number =>
       MessagePrinter.done(name, trouble)
   }
+
 }

@@ -1,11 +1,8 @@
-/* (C) 2022 */
 package s.command.drawer
 
 import s.command.command.MacroCommand
 
-import java.awt.Canvas
-import java.awt.Color
-import java.awt.Graphics
+import java.awt.{Canvas, Color, Graphics}
 
 class DrawCanvas(
     width: Int,

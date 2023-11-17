@@ -1,4 +1,3 @@
-/* (C) 2022 */
 package s.template_method.inheritance
 
 abstract class AbstractDisplay {

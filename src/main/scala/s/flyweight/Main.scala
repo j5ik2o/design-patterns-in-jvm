@@ -1,4 +1,3 @@
-/* (C) 2022 */
 package s.flyweight
 
 import j.flyweight.BigString

@@ -41,13 +41,6 @@ spotless {
 		ktlint() // or ktfmt() or prettier()
 	}
 	scala {
-		// by default, all `.scala` and `.sc` files in the java sourcesets will be formatted
-
 		scalafmt() // has its own section below
-
-		licenseHeader '/* (C) $YEAR */', 'package ' // or licenseHeaderFile
-		// note the 'package ' argument - this is a regex which identifies the top
-		// of the file, be careful that all of your sources have a package declaration,
-		// or pick a regex which works better for your code
 	}
 }

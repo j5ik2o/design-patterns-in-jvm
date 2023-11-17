@@ -2,12 +2,12 @@ package j.chain_of_resposibility.like.functional;
 
 public final class LimitSupport {
     public static Support create(String name, int limit) {
-        return t -> {
-            if (t.getNumber() < limit) {
-                MessagePrinter.done(name, t);
-                return ControlBreak.of(t).withControlBreak(true);
+        return trouble -> {
+            if (trouble.getNumber() < limit) {
+                MessagePrinter.done(name, trouble);
+                return ControlBreak.of(trouble).withControlBreak(true);
             } else {
-                return ControlBreak.of(t);
+                return ControlBreak.of(trouble);
             }
         };
     }

@@ -1,4 +1,3 @@
-/* (C) 2022 */
 package s.command.command
 
 import java.util
