@@ -1,0 +1,18 @@
+Chain of Responsibility パターンのコードの複雑度
+
+1) Java 継承
+Total nloc   Avg.NLOC  AvgCCN  Avg.token   Fun Cnt  Warning cnt   Fun Rt   nloc Rt
+------------------------------------------------------------------------------------------
+       133       3.7     1.1       24.4       23            0      0.00    0.00
+2) Java 合成+インターフェイス
+Total nloc   Avg.NLOC  AvgCCN  Avg.token   Fun Cnt  Warning cnt   Fun Rt   nloc Rt
+------------------------------------------------------------------------------------------
+       224       3.9     1.1       26.2       39            0      0.00    0.00
+3) Java 関数合成版
+Total nloc   Avg.NLOC  AvgCCN  Avg.token   Fun Cnt  Warning cnt   Fun Rt   nloc Rt
+------------------------------------------------------------------------------------------
+       111       5.6     1.4       36.4       14            0      0.00    0.00
+4) Scala パーシャルファンクション版
+Total nloc   Avg.NLOC  AvgCCN  Avg.token   Fun Cnt  Warning cnt   Fun Rt   nloc Rt
+------------------------------------------------------------------------------------------
+        58       4.0     1.8       28.2        8            0      0.00    0.00

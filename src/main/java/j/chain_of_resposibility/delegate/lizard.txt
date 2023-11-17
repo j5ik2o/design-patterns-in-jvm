@@ -1,0 +1,62 @@
+================================================
+  NLOC    CCN   token  PARAM  length  location  
+------------------------------------------------
+       3      1     21      2       3 SupportFactory::createNoSupport@6-8@./SupportFactory.java
+       3      1     26      3       3 SupportFactory::createLimitSupport@10-12@./SupportFactory.java
+       3      1     21      2       3 SupportFactory::createOddSupport@14-16@./SupportFactory.java
+       4      1     42      3       4 OddSupport::OddSupport@13-16@./OddSupport.java
+       3      1     21      1       3 OddSupport::OddSupport@18-20@./OddSupport.java
+       3      1     30      2       3 OddSupport::OddSupport@22-24@./OddSupport.java
+       3      1     16      1       3 OddSupport::support@27-29@./OddSupport.java
+       3      1      8      0       3 OddSupport::getDelegate@32-34@./OddSupport.java
+       3      1     12      0       3 OddSupport::toString@37-39@./OddSupport.java
+       6      1     29      0       6 OddSupport::ResolverImpl@41-46@./OddSupport.java
+       5      1     42      3       5 LimitSupport::LimitSupport@12-16@./LimitSupport.java
+       3      1     23      2       3 LimitSupport::LimitSupport@18-20@./LimitSupport.java
+       3      1     30      3       3 LimitSupport::LimitSupport@22-24@./LimitSupport.java
+       4      1     27      1       4 LimitSupport::support@27-30@./LimitSupport.java
+       3      1      8      0       3 LimitSupport::getDelegate@33-35@./LimitSupport.java
+       3      1     12      0       3 LimitSupport::toString@38-40@./LimitSupport.java
+       6      1     29      1       7 LimitSupport::ResolverImpl@42-48@./LimitSupport.java
+       4      1     36      3       4 NoSupport::NoSupport@10-13@./NoSupport.java
+       3      1     21      1       3 NoSupport::NoSupport@15-17@./NoSupport.java
+       3      1     30      2       3 NoSupport::NoSupport@19-21@./NoSupport.java
+       3      1     16      1       3 NoSupport::support@25-27@./NoSupport.java
+       3      1      8      0       3 NoSupport::getDelegate@30-32@./NoSupport.java
+       3      1     12      0       3 NoSupport::toString@35-37@./NoSupport.java
+       6      1     21      0       6 NoSupport::ResolverImpl@39-44@./NoSupport.java
+      11      2    109      1      13 Main::main@6-18@./Main.java
+       5      1     35      3       5 SupportDelegate::SupportDelegate@15-19@./SupportDelegate.java
+       3      1     21      2       3 SupportDelegate::SupportDelegate@21-23@./SupportDelegate.java
+       3      1     21      2       3 SupportDelegate::create@25-27@./SupportDelegate.java
+       3      1     28      3       3 SupportDelegate::create@29-31@./SupportDelegate.java
+       9      3     49      1       9 SupportDelegate::support@33-41@./SupportDelegate.java
+       3      1     22      1       3 SupportDelegate::done@43-45@./SupportDelegate.java
+       3      1     18      1       3 SupportDelegate::fail@47-49@./SupportDelegate.java
+       4      1     42      3       4 SpecialSupport::SpecialSupport@12-15@./SpecialSupport.java
+       3      1     25      2       3 SpecialSupport::SpecialSupport@17-19@./SpecialSupport.java
+       3      1     34      3       3 SpecialSupport::SpecialSupport@21-23@./SpecialSupport.java
+       4      1     27      1       4 SpecialSupport::support@26-29@./SpecialSupport.java
+       3      1      8      0       3 SpecialSupport::getDelegate@32-34@./SpecialSupport.java
+       3      1     12      0       3 SpecialSupport::toString@37-39@./SpecialSupport.java
+       6      1     29      1       7 SpecialSupport::ResolverImpl@41-47@./SpecialSupport.java
+9 file analyzed.
+==============================================================
+NLOC    Avg.NLOC  AvgCCN  Avg.token  function_cnt    file
+--------------------------------------------------------------
+     13       3.0     1.0       22.7         3     ./SupportFactory.java
+      5       0.0     0.0        0.0         0     ./Resolver.java
+     36       3.6     1.0       22.6         7     ./OddSupport.java
+      7       0.0     0.0        0.0         0     ./Support.java
+     38       3.9     1.0       24.4         7     ./LimitSupport.java
+     35       3.6     1.0       20.6         7     ./NoSupport.java
+     15      11.0     2.0      109.0         1     ./Main.java
+     38       4.1     1.3       27.7         7     ./SupportDelegate.java
+     37       3.7     1.0       25.3         7     ./SpecialSupport.java
+
+===============================================================================================================
+No thresholds exceeded (cyclomatic_complexity > 15 or length > 1000 or nloc > 1000000 or parameter_count > 100)
+==========================================================================================
+Total nloc   Avg.NLOC  AvgCCN  Avg.token   Fun Cnt  Warning cnt   Fun Rt   nloc Rt
+------------------------------------------------------------------------------------------
+       224       3.9     1.1       26.2       39            0      0.00    0.00

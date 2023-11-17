@@ -1,0 +1,28 @@
+================================================
+  NLOC    CCN   token  PARAM  length  location  
+------------------------------------------------
+       2      1     12      1       3 isDefinedAt@8-10@./NoSupport.scala
+       2      1     16      1       2 apply@10-11@./NoSupport.scala
+       5      1     29      1       9 create@6-14@./NoSupport.scala
+       5      3     39      2       5 create@7-11@./SpecialSupport.scala
+       4      1     31      2       5 done@6-10@./MessagePrinter.scala
+       4      1     23      1       4 fail@10-13@./MessagePrinter.scala
+       5      3     37      1       5 create@6-10@./OddSupport.scala
+       5      3     39      2       5 create@6-10@./LimitSupport.scala
+6 file analyzed.
+==============================================================
+NLOC    Avg.NLOC  AvgCCN  Avg.token  function_cnt    file
+--------------------------------------------------------------
+     10       3.0     1.0       19.0         3     ./NoSupport.scala
+      8       5.0     3.0       39.0         1     ./SpecialSupport.scala
+     10       4.0     1.0       27.0         2     ./MessagePrinter.scala
+      8       5.0     3.0       37.0         1     ./OddSupport.scala
+     14       0.0     0.0        0.0         0     ./Main.scala
+      8       5.0     3.0       39.0         1     ./LimitSupport.scala
+
+===============================================================================================================
+No thresholds exceeded (cyclomatic_complexity > 15 or length > 1000 or nloc > 1000000 or parameter_count > 100)
+==========================================================================================
+Total nloc   Avg.NLOC  AvgCCN  Avg.token   Fun Cnt  Warning cnt   Fun Rt   nloc Rt
+------------------------------------------------------------------------------------------
+        58       4.0     1.8       28.2        8            0      0.00    0.00
