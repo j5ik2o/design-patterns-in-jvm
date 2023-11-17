@@ -13,10 +13,8 @@ public abstract class Support {
         this.next = next;
     }
 
-    protected abstract Support createSupport(@NotNull String name, @Nullable Support next);
-
-    public Support withNext(@NotNull Support next) {
-        return createSupport(name, next);
+    public String getName() {
+        return name;
     }
 
     public void support(Trouble trouble) {

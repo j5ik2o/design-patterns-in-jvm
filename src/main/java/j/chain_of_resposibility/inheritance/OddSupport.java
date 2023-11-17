@@ -14,12 +14,8 @@ public class OddSupport extends Support {
     }
 
     @Override
-    protected Support createSupport(@NotNull String name, @Nullable Support next) {
-        return SupportFactory.createOddSupport(name, next);
-    }
-
-    @Override
     protected boolean resolve(Trouble trouble) {
+        // System.out.printf("OddSupport: name = %s\n", getName());
         return trouble.getNumber() % 2 == 1;
     }
 }

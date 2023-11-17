@@ -19,18 +19,14 @@ public final class LimitSupport implements Support {
         this(name, new ResolverImpl(limit), null);
     }
 
-    public LimitSupport(String name, SupportDelegate next, int limit) {
-        this(name, new ResolverImpl(limit), next);
+    public LimitSupport(String name, Support next, int limit) {
+        this(name, new ResolverImpl(limit), next.getDelegate());
     }
 
     @Override
     public void support(@NotNull Trouble trouble) {
+        System.out.printf("LimitSupport.support(%s)%n", trouble);
         delegate.support(trouble);
-    }
-
-    @Override
-    public Support withNext(@NotNull Support next) {
-        return SupportFactory.createLimitSupport(name, next.getDelegate(), resolver.limit);
     }
 
     @Override

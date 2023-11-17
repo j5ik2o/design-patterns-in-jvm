@@ -16,13 +16,10 @@ public class LimitSupport extends Support {
         this(name, null, limit);
     }
 
-    @Override
-    protected Support createSupport(@NotNull String name, @Nullable Support next) {
-        return SupportFactory.createLimitSupport(name, next, limit);
-    }
 
     @Override
     protected boolean resolve(Trouble trouble) {
+        // System.out.printf("LimitSupport: name = %s, limit = %d\n", getName(), limit);
         return trouble.getNumber() < limit;
     }
 }

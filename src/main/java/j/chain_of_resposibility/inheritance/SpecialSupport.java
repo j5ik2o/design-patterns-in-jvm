@@ -17,12 +17,8 @@ public class SpecialSupport extends Support {
     }
 
     @Override
-    protected Support createSupport(@NotNull String name, @Nullable Support next) {
-        return SupportFactory.createSpecialSupport(name, next, number);
-    }
-
-    @Override
     protected boolean resolve(Trouble trouble) {
+        // System.out.printf("SpecialSupport: name = %s, number = %d\n", getName(), number);
         return trouble.getNumber() == number;
     }
 }

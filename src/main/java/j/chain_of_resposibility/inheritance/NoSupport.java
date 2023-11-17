@@ -15,12 +15,8 @@ public class NoSupport extends Support {
     }
 
     @Override
-    protected Support createSupport(@NotNull String name, @Nullable Support next) {
-        return SupportFactory.createNoSupport(name, next);
-    }
-
-    @Override
     protected boolean resolve(Trouble trouble) {
+        // System.out.printf("NoSupport: name = %s\n", getName());
         return false; // 自分は何も解決しない
     }
 }

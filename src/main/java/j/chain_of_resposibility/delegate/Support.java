@@ -7,7 +7,5 @@ public interface Support {
 
     void support(@NotNull Trouble trouble);
 
-    Support withNext(@NotNull Support next);
-
     SupportDelegate getDelegate();
 }

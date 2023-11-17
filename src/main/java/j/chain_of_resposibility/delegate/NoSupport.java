@@ -16,19 +16,14 @@ public final class NoSupport implements Support {
         this(name, new ResolverImpl(), null);
     }
 
-    public NoSupport(@NotNull String name, @NotNull SupportDelegate next) {
-        this(name, new ResolverImpl(), next);
+    public NoSupport(@NotNull String name, @NotNull Support next) {
+        this(name, new ResolverImpl(), next.getDelegate());
     }
 
 
     @Override
     public void support(@NotNull Trouble trouble) {
         delegate.support(trouble);
-    }
-
-    @Override
-    public Support withNext(@NotNull Support next) {
-        return SupportFactory.createNoSupport(name, next.getDelegate());
     }
 
     @Override

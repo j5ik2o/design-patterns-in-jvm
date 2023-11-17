@@ -19,18 +19,13 @@ public class OddSupport implements Support {
         this(name, new ResolverImpl(), null);
     }
 
-    public OddSupport(@NotNull String name, @NotNull SupportDelegate next) {
-        this(name, new ResolverImpl(), next);
+    public OddSupport(@NotNull String name, @NotNull Support next) {
+        this(name, new ResolverImpl(), next.getDelegate());
     }
 
     @Override
     public void support(@NotNull Trouble trouble) {
         delegate.support(trouble);
-    }
-
-    @Override
-    public Support withNext(@NotNull Support next) {
-        return SupportFactory.createOddSupport(name, next.getDelegate());
     }
 
     @Override

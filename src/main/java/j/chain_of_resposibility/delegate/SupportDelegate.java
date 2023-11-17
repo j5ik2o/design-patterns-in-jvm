@@ -31,6 +31,7 @@ public final class SupportDelegate {
     }
 
     public void support(@NotNull Trouble trouble) {
+
         if (resolver.resolve(trouble)) {
             done(trouble);
         } else if (next != null) {

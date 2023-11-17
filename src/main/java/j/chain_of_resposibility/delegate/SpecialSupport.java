@@ -5,7 +5,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 
-public class SpecialSupport implements Support {
+public final class SpecialSupport implements Support {
     private final String name;
     private final SupportDelegate delegate;
 
@@ -18,18 +18,14 @@ public class SpecialSupport implements Support {
         this(name, new ResolverImpl(number), null);
     }
 
-    public SpecialSupport(@NotNull String name, @NotNull SupportDelegate next, int number) {
-        this(name, new ResolverImpl(number), next);
+    public SpecialSupport(@NotNull String name, @NotNull Support next, int number) {
+        this(name, new ResolverImpl(number), next.getDelegate());
     }
 
     @Override
     public void support(@NotNull Trouble trouble) {
+        System.out.printf("SpecialSupport: name = %s%n", name);
         delegate.support(trouble);
-    }
-
-    @Override
-    public Support withNext(@NotNull Support next) {
-        return null;
     }
 
     @Override
