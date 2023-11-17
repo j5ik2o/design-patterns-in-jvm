@@ -24,7 +24,7 @@ public final class LimitSupport implements Support {
     }
 
     @Override
-    public void support(Trouble trouble) {
+    public void support(@NotNull Trouble trouble) {
         delegate.support(trouble);
     }
 

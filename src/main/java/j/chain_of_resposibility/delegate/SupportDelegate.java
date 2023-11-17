@@ -2,30 +2,32 @@ package j.chain_of_resposibility.delegate;
 
 
 import j.chain_of_resposibility.Trouble;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public final class SupportDelegate {
 
     private final Resolver resolver;
     private final SupportDelegate next;
 
-    private SupportDelegate(Resolver resolver, SupportDelegate next) {
+    private SupportDelegate(@NotNull Resolver resolver, @Nullable SupportDelegate next) {
         this.resolver = resolver;
         this.next = next;
     }
 
-    private SupportDelegate(Resolver resolver) {
+    private SupportDelegate(@NotNull Resolver resolver) {
         this(resolver, null);
     }
 
-    static SupportDelegate create(Resolver resolver) {
+    static SupportDelegate create(@NotNull Resolver resolver) {
         return new SupportDelegate(resolver);
     }
 
-    static SupportDelegate create(Resolver resolver, SupportDelegate next) {
+    static SupportDelegate create(@NotNull Resolver resolver, @Nullable SupportDelegate next) {
         return new SupportDelegate(resolver, next);
     }
 
-    public void support(Trouble trouble) {
+    public void support(@NotNull Trouble trouble) {
         for (SupportDelegate obj = this; true; obj = obj.next) {
             if (resolver.resolve(trouble)) {
                 obj.done(trouble);

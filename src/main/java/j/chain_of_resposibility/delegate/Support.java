@@ -5,7 +5,7 @@ import org.jetbrains.annotations.NotNull;
 
 public interface Support {
 
-    void support(Trouble trouble);
+    void support(@NotNull Trouble trouble);
 
     Support withNext(@NotNull Support next);
 

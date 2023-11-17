@@ -12,17 +12,17 @@ public final class NoSupport implements Support {
         this.delegate = SupportDelegate.create(resolver, next);
     }
 
-    public NoSupport(String name) {
+    public NoSupport(@NotNull String name) {
         this(name, new ResolverImpl(), null);
     }
 
-    public NoSupport(String name, SupportDelegate next) {
+    public NoSupport(@NotNull String name, @NotNull SupportDelegate next) {
         this(name, new ResolverImpl(), next);
     }
 
 
     @Override
-    public void support(Trouble trouble) {
+    public void support(@NotNull Trouble trouble) {
         delegate.support(trouble);
     }
 
