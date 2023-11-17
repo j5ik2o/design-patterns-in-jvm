@@ -11,10 +11,10 @@ public class Main {
         var elmo = OddSupport.create("Elmo");
         var fred = LimitSupport.create("Fred", 300);
 
-        var chain = alice.chain(bob).chain(charlie).chain(diana).chain(elmo).chain(fred);
+        var chain = alice.orElse(bob).orElse(charlie).orElse(diana).orElse(elmo).orElse(fred);
 
         for (int i = 0; i < 500; i += 33) {
-            chain.apply(new Trouble(i)).otherwise(MessagePrinter::fail);
+            chain.apply(new Trouble(i)).orElse(MessagePrinter::fail);
         }
     }
 }

@@ -29,7 +29,7 @@ public class ControlBreak {
         return new ControlBreak(trouble, false);
     }
 
-    public void otherwise(Consumer<Trouble> consumer) {
+    public void orElse(Consumer<Trouble> consumer) {
         if (!controlBreak) {
             consumer.accept(trouble);
         }
