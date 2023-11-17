@@ -4,7 +4,7 @@ import j.chain_of_resposibility.Trouble;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class LimitSupport extends Support {
+public final class LimitSupport extends Support {
     private int limit; // この番号未満なら解決できる
 
     public LimitSupport(@NotNull String name, int limit, @Nullable Support next) {

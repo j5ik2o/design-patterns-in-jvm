@@ -1,6 +1,6 @@
 package j.chain_of_resposibility.like.functional;
 
-public class OddSupport {
+public final class OddSupport {
 
     public static Support create(String name) {
         return t -> {

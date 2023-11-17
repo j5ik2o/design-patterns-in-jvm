@@ -2,7 +2,7 @@ package j.chain_of_resposibility.delegate;
 
 import org.jetbrains.annotations.NotNull;
 
-public class SupportFactory {
+public final class SupportFactory {
     public static Support createNoSupport(@NotNull String name, Support next) {
         return new NoSupport(name, next);
     }

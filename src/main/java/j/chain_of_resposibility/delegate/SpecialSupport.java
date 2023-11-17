@@ -4,7 +4,6 @@ import j.chain_of_resposibility.Trouble;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-
 public final class SpecialSupport implements Support {
     private final String name;
     private final SupportDelegate delegate;

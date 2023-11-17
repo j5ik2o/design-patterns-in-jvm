@@ -1,6 +1,6 @@
 package j.chain_of_resposibility.like.functional;
 
-public class LimitSupport {
+public final class LimitSupport {
     public static Support create(String name, int limit) {
         return t -> {
             if (t.getNumber() < limit) {

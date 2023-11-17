@@ -4,7 +4,7 @@ import j.chain_of_resposibility.Trouble;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class OddSupport implements Support {
+public final class OddSupport implements Support {
     private final String name;
 
     private final SupportDelegate delegate;

@@ -4,7 +4,7 @@ import j.chain_of_resposibility.Trouble;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class NoSupport extends Support {
+public final class NoSupport extends Support {
 
     public NoSupport(@NotNull String name, @Nullable Support next) {
         super(name, next);

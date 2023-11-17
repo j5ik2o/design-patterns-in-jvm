@@ -4,7 +4,7 @@ import j.chain_of_resposibility.Trouble;
 
 import java.util.function.Consumer;
 
-public class ControlBreak {
+public final class ControlBreak {
     private final Trouble trouble;
     private final boolean controlBreak;
 

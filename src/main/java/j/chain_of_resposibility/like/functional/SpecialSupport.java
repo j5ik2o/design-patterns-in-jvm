@@ -1,6 +1,6 @@
 package j.chain_of_resposibility.like.functional;
 
-public class SpecialSupport {
+public final class SpecialSupport {
 
     public static Support create(String name, int number) {
         return t -> {
