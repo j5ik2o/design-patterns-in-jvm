@@ -5,50 +5,42 @@ import org.jetbrains.annotations.NotNull;
 
 public final class NoSupport implements Support {
     private final String name;
-    private final Support next;
     private final SupportDelegate delegate;
 
-    public NoSupport(String name, Support next, SupportDelegate delegate) {
+    public NoSupport(String name, NoResolver resolver, SupportDelegate next) {
         this.name = name;
-        this.next = next;
-        this.delegate = delegate;
+        this.delegate = new SupportDelegate(resolver, next);
     }
 
     public NoSupport(String name) {
-        this(name, null, new SupportDelegate());
+        this(name, new NoSupport.NoResolver(), null);
     }
 
-    public NoSupport(String name, Support next) {
-        this(name, next, new SupportDelegate());
+    public NoSupport(String name, SupportDelegate next) {
+        this(name, new NoSupport.NoResolver(), next);
     }
 
-    @Override
-    public boolean resolve(Trouble trouble) {
-        return false;
-    }
 
     @Override
     public void support(Trouble trouble) {
-        delegate.support(this, trouble);
+        delegate.support(trouble);
     }
 
     @Override
     public Support withNext(@NotNull Support next) {
-        return SupportFactory.createNoSupport(name, next);
+        return SupportFactory.createNoSupport(name, next.getDelegate());
     }
 
     @Override
-    public Support getNext() {
-        return next;
+    public SupportDelegate getDelegate() {
+        return delegate;
     }
 
-    @Override
-    public void done(Trouble trouble) {
-        delegate.done(this, trouble);
+    public static class NoResolver implements Resolver {
+        @Override
+        public boolean resolve(Trouble trouble) {
+            return false;
+        }
     }
 
-    @Override
-    public void fail(Trouble trouble) {
-        delegate.fail(this, trouble);
-    }
 }

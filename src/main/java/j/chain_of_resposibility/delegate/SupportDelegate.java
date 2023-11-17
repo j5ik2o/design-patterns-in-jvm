@@ -5,27 +5,36 @@ import j.chain_of_resposibility.Trouble;
 
 public final class SupportDelegate {
 
-    public SupportDelegate() {
+    private final Resolver resolver;
+    private final SupportDelegate next;
+
+    public SupportDelegate(Resolver resolver, SupportDelegate next) {
+        this.resolver = resolver;
+        this.next = next;
+    }
+
+    public SupportDelegate(Resolver resolver) {
+        this(resolver, null);
     }
 
 
-    public void support(Support self, Trouble trouble) {
-        for (Support obj = self; true; obj = obj.getNext()) {
-            if (obj.resolve(trouble)) {
+    public void support(Trouble trouble) {
+        for (SupportDelegate obj = this; true; obj = obj.next) {
+            if (resolver.resolve(trouble)) {
                 obj.done(trouble);
                 break;
-            } else if (obj.getNext() == null) {
+            } else if (obj.next == null) {
                 obj.fail(trouble);
                 break;
             }
         }
     }
 
-    void done(Support self, Trouble trouble) {
+    private void done(Trouble trouble) {
         System.out.println(trouble + " is resolved by " + this + ".");
     }
 
-    void fail(Support self, Trouble trouble) {
+    private void fail(Trouble trouble) {
         System.out.println(trouble + " cannot be resolved.");
     }
 }

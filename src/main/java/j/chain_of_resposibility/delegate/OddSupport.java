@@ -5,50 +5,45 @@ import org.jetbrains.annotations.NotNull;
 
 public class OddSupport implements Support {
     private final String name;
-    private final Support next;
+
     private final SupportDelegate delegate;
 
-    public OddSupport(String name, Support next, SupportDelegate delegate) {
+    private final OddResolver resolver;
+
+    public OddSupport(String name, OddResolver resolver, SupportDelegate next) {
         this.name = name;
-        this.next = next;
-        this.delegate = delegate;
+        this.resolver = resolver;
+        this.delegate = new SupportDelegate(resolver, next);
     }
 
     public OddSupport(String name) {
-        this(name, null, new SupportDelegate());
+        this(name, new OddResolver(), null);
     }
 
-    public OddSupport(String name, Support next) {
-        this(name, next, new SupportDelegate());
-    }
-
-    @Override
-    public boolean resolve(Trouble trouble) {
-        return trouble.getNumber() % 2 == 1;
+    public OddSupport(String name, SupportDelegate next) {
+        this(name, new OddResolver(), next);
     }
 
     @Override
     public void support(Trouble trouble) {
-        delegate.support(this, trouble);
+        delegate.support(trouble);
     }
 
     @Override
     public Support withNext(@NotNull Support next) {
-        return SupportFactory.createOddSupport(name, next);
+        return SupportFactory.createOddSupport(name, next.getDelegate());
     }
 
     @Override
-    public Support getNext() {
-        return next;
+    public SupportDelegate getDelegate() {
+        return delegate;
     }
 
-    @Override
-    public void done(Trouble trouble) {
-        delegate.done(this, trouble);
+    public static class OddResolver implements Resolver {
+        @Override
+        public boolean resolve(Trouble trouble) {
+            return trouble.getNumber() % 2 == 1;
+        }
     }
 
-    @Override
-    public void fail(Trouble trouble) {
-        delegate.fail(this, trouble);
-    }
 }

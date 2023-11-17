@@ -6,33 +6,26 @@ import org.jetbrains.annotations.NotNull;
 
 public class SpecialSupport implements Support {
     private final String name;
-    private final Support next;
-    private final int number; // この番号だけ解決できる
+    private final SpecialResolver resolver;
     private final SupportDelegate delegate;
 
-    public SpecialSupport(String name, Support next, int number, SupportDelegate delegate) {
+    public SpecialSupport(String name, SpecialSupport.SpecialResolver resolver, SupportDelegate next) {
         this.name = name;
-        this.next = next;
-        this.number = number;
-        this.delegate = delegate;
+        this.resolver = resolver;
+        this.delegate = new SupportDelegate(resolver, next);
     }
 
     public SpecialSupport(String name, int number) {
-        this(name, null, number, new SupportDelegate());
+        this(name, new SpecialResolver(number), null);
     }
 
-    public SpecialSupport(String name, Support next, int number) {
-        this(name, next, number, new SupportDelegate());
-    }
-
-    @Override
-    public boolean resolve(Trouble trouble) {
-        return trouble.getNumber() == number;
+    public SpecialSupport(String name, SupportDelegate next, int number) {
+        this(name, new SpecialResolver(number), next);
     }
 
     @Override
     public void support(Trouble trouble) {
-        delegate.support(this, trouble);
+        delegate.support(trouble);
     }
 
     @Override
@@ -41,17 +34,22 @@ public class SpecialSupport implements Support {
     }
 
     @Override
-    public Support getNext() {
-        return next;
+    public SupportDelegate getDelegate() {
+        return delegate;
     }
 
-    @Override
-    public void done(Trouble trouble) {
-        delegate.done(this, trouble);
+    public static class SpecialResolver implements Resolver {
+
+        final int number;
+
+        public SpecialResolver(int number) {
+            this.number = number;
+        }
+
+        @Override
+        public boolean resolve(Trouble trouble) {
+            return trouble.getNumber() == number;
+        }
     }
 
-    @Override
-    public void fail(Trouble trouble) {
-        delegate.fail(this, trouble);
-    }
 }
