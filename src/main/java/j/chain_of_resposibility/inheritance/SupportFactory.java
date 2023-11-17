@@ -5,12 +5,16 @@ public final class SupportFactory {
         return new NoSupport(name, next);
     }
 
-    public static Support createLimitSupport(String name, Support next, int limit) {
-        return new LimitSupport(name, next, limit);
+    public static Support createLimitSupport(String name, int limit, Support next) {
+        return new LimitSupport(name, limit, next);
     }
 
-    public static Support createSpecialSupport(String name, Support next, int number) {
-        return new SpecialSupport(name, next, number);
+    public static Support createLimitSupport(String name, int limit) {
+        return new LimitSupport(name, limit);
+    }
+
+    public static Support createSpecialSupport(String name, int number, Support next) {
+        return new SpecialSupport(name, number, next);
     }
 
     public static Support createOddSupport(String name, Support next) {

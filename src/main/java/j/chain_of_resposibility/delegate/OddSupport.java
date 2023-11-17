@@ -9,7 +9,6 @@ public class OddSupport implements Support {
 
     private final SupportDelegate delegate;
 
-
     OddSupport(@NotNull String name, @NotNull ResolverImpl resolver, @Nullable SupportDelegate next) {
         this.name = name;
         this.delegate = SupportDelegate.create(toString(), resolver, next);

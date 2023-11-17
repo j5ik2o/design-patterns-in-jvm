@@ -7,11 +7,8 @@ public final class LimitSupport implements Support {
     private final String name;
     private final SupportDelegate delegate;
 
-    private final ResolverImpl resolver;
-
     LimitSupport(String name, ResolverImpl resolver, SupportDelegate next) {
         this.name = name;
-        this.resolver = resolver;
         this.delegate = SupportDelegate.create(toString(), resolver, next);
     }
 

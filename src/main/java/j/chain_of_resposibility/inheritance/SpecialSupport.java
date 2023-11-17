@@ -7,13 +7,13 @@ import org.jetbrains.annotations.Nullable;
 public class SpecialSupport extends Support {
     private int number; // この番号だけ解決できる
 
-    public SpecialSupport(@NotNull String name, @Nullable Support next, int number) {
+    public SpecialSupport(@NotNull String name, int number, @Nullable Support next) {
         super(name, next);
         this.number = number;
     }
 
     public SpecialSupport(@NotNull String name, int number) {
-        this(name, null, number);
+        this(name, number, null);
     }
 
     @Override
