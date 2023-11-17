@@ -7,24 +7,27 @@ import org.jetbrains.annotations.Nullable;
 
 public final class SupportDelegate {
 
+    private final String name;
+
     private final Resolver resolver;
     private final SupportDelegate next;
 
-    private SupportDelegate(@NotNull Resolver resolver, @Nullable SupportDelegate next) {
+    private SupportDelegate(String name, @NotNull Resolver resolver, @Nullable SupportDelegate next) {
+        this.name = name;
         this.resolver = resolver;
         this.next = next;
     }
 
-    private SupportDelegate(@NotNull Resolver resolver) {
-        this(resolver, null);
+    private SupportDelegate(String name, @NotNull Resolver resolver) {
+        this(name, resolver, null);
     }
 
-    static SupportDelegate create(@NotNull Resolver resolver) {
-        return new SupportDelegate(resolver);
+    static SupportDelegate create(String name, @NotNull Resolver resolver) {
+        return new SupportDelegate(name, resolver);
     }
 
-    static SupportDelegate create(@NotNull Resolver resolver, @Nullable SupportDelegate next) {
-        return new SupportDelegate(resolver, next);
+    static SupportDelegate create(String name, @NotNull Resolver resolver, @Nullable SupportDelegate next) {
+        return new SupportDelegate(name, resolver, next);
     }
 
     public void support(@NotNull Trouble trouble) {
@@ -38,7 +41,7 @@ public final class SupportDelegate {
     }
 
     private void done(Trouble trouble) {
-        System.out.println(trouble + " is resolved by " + this + ".");
+        System.out.println(trouble + " is resolved by " + name + ".");
     }
 
     private void fail(Trouble trouble) {

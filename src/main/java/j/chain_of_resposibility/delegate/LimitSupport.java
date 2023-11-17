@@ -12,7 +12,7 @@ public final class LimitSupport implements Support {
     LimitSupport(String name, ResolverImpl resolver, SupportDelegate next) {
         this.name = name;
         this.resolver = resolver;
-        this.delegate = SupportDelegate.create(resolver, next);
+        this.delegate = SupportDelegate.create(toString(), resolver, next);
     }
 
     public LimitSupport(String name, int limit) {

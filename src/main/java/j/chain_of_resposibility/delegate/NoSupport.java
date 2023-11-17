@@ -9,7 +9,7 @@ public final class NoSupport implements Support {
 
     NoSupport(String name, ResolverImpl resolver, SupportDelegate next) {
         this.name = name;
-        this.delegate = SupportDelegate.create(resolver, next);
+        this.delegate = SupportDelegate.create(toString(), resolver, next);
     }
 
     public NoSupport(@NotNull String name) {

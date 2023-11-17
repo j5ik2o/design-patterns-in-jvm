@@ -12,7 +12,7 @@ public class OddSupport implements Support {
 
     OddSupport(@NotNull String name, @NotNull ResolverImpl resolver, @Nullable SupportDelegate next) {
         this.name = name;
-        this.delegate = SupportDelegate.create(resolver, next);
+        this.delegate = SupportDelegate.create(toString(), resolver, next);
     }
 
     public OddSupport(@NotNull String name) {
@@ -36,6 +36,11 @@ public class OddSupport implements Support {
     @Override
     public SupportDelegate getDelegate() {
         return delegate;
+    }
+
+    @Override
+    public String toString() {
+        return "[" + name + "]";
     }
 
     record ResolverImpl() implements Resolver {

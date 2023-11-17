@@ -11,7 +11,7 @@ public class SpecialSupport implements Support {
 
     SpecialSupport(@NotNull String name, @NotNull ResolverImpl resolver, @Nullable SupportDelegate next) {
         this.name = name;
-        this.delegate = SupportDelegate.create(resolver, next);
+        this.delegate = SupportDelegate.create(toString(), resolver, next);
     }
 
     public SpecialSupport(@NotNull String name, int number) {
