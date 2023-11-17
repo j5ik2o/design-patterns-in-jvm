@@ -1,6 +1,6 @@
 package s.template_method.delegate
 
-final class StringDisplay(private val string: String) extends DisplayDelegate {
+final class StringDisplayDelegate(private val string: String) extends DisplayDelegate {
   private val width = string.length
 
   override def open(): Unit = {

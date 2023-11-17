@@ -1,13 +1,11 @@
 package s.template_method.delegate
 
-import j.template_method.delegate.DisplayDelegate
-
-final class Display(private val opener: DisplayDelegate, private val printer: DisplayDelegate, private val closer: DisplayDelegate) {
+final class Display(private val displayDelegate: DisplayDelegate) {
   def display(): Unit = {
-    opener.open()
-    for (i <- 0 until 5) {
-      printer.print()
+    displayDelegate.open()
+    for (_ <- 0 until 5) {
+      displayDelegate.print()
     }
-    closer.close()
+    displayDelegate.close()
   }
 }
