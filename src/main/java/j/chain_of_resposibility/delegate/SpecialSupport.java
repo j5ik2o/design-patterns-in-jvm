@@ -18,7 +18,7 @@ public final class SpecialSupport implements Support {
         this(name, new ResolverImpl(number), null);
     }
 
-    public SpecialSupport(@NotNull String name, @NotNull Support next, int number) {
+    public SpecialSupport(@NotNull String name, int number, @NotNull Support next) {
         this(name, new ResolverImpl(number), next.getDelegate());
     }
 

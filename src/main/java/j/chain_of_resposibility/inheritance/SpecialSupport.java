@@ -18,7 +18,6 @@ public class SpecialSupport extends Support {
 
     @Override
     protected boolean resolve(Trouble trouble) {
-        // System.out.printf("SpecialSupport: name = %s, number = %d\n", getName(), number);
         return trouble.getNumber() == number;
     }
 }

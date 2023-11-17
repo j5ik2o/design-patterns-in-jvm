@@ -15,7 +15,6 @@ public class OddSupport extends Support {
 
     @Override
     protected boolean resolve(Trouble trouble) {
-        // System.out.printf("OddSupport: name = %s\n", getName());
         return trouble.getNumber() % 2 == 1;
     }
 }

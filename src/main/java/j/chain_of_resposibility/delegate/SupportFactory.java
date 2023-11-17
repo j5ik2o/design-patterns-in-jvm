@@ -20,6 +20,6 @@ public class SupportFactory {
     }
 
     public static Support createSpecialSupport(@NotNull String name, int number, Support next) {
-        return new SpecialSupport(name, next, number);
+        return new SpecialSupport(name, number, next);
     }
 }
