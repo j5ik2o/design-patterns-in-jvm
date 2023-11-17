@@ -8,15 +8,22 @@ public final class SupportDelegate {
     private final Resolver resolver;
     private final SupportDelegate next;
 
-    public SupportDelegate(Resolver resolver, SupportDelegate next) {
+    private SupportDelegate(Resolver resolver, SupportDelegate next) {
         this.resolver = resolver;
         this.next = next;
     }
 
-    public SupportDelegate(Resolver resolver) {
+    private SupportDelegate(Resolver resolver) {
         this(resolver, null);
     }
 
+    static SupportDelegate create(Resolver resolver) {
+        return new SupportDelegate(resolver);
+    }
+
+    static SupportDelegate create(Resolver resolver, SupportDelegate next) {
+        return new SupportDelegate(resolver, next);
+    }
 
     public void support(Trouble trouble) {
         for (SupportDelegate obj = this; true; obj = obj.next) {

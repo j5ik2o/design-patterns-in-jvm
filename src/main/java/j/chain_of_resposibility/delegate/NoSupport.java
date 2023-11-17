@@ -7,17 +7,17 @@ public final class NoSupport implements Support {
     private final String name;
     private final SupportDelegate delegate;
 
-    public NoSupport(String name, NoResolver resolver, SupportDelegate next) {
+    NoSupport(String name, ResolverImpl resolver, SupportDelegate next) {
         this.name = name;
-        this.delegate = new SupportDelegate(resolver, next);
+        this.delegate = SupportDelegate.create(resolver, next);
     }
 
     public NoSupport(String name) {
-        this(name, new NoSupport.NoResolver(), null);
+        this(name, new ResolverImpl(), null);
     }
 
     public NoSupport(String name, SupportDelegate next) {
-        this(name, new NoSupport.NoResolver(), next);
+        this(name, new ResolverImpl(), next);
     }
 
 
@@ -36,7 +36,12 @@ public final class NoSupport implements Support {
         return delegate;
     }
 
-    public static class NoResolver implements Resolver {
+    @Override
+    public String toString() {
+        return "[" + name + "]";
+    }
+
+    record ResolverImpl() implements Resolver {
         @Override
         public boolean resolve(Trouble trouble) {
             return false;

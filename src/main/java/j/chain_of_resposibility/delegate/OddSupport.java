@@ -8,20 +8,18 @@ public class OddSupport implements Support {
 
     private final SupportDelegate delegate;
 
-    private final OddResolver resolver;
 
-    public OddSupport(String name, OddResolver resolver, SupportDelegate next) {
+    OddSupport(String name, ResolverImpl resolver, SupportDelegate next) {
         this.name = name;
-        this.resolver = resolver;
-        this.delegate = new SupportDelegate(resolver, next);
+        this.delegate = SupportDelegate.create(resolver, next);
     }
 
     public OddSupport(String name) {
-        this(name, new OddResolver(), null);
+        this(name, new ResolverImpl(), null);
     }
 
     public OddSupport(String name, SupportDelegate next) {
-        this(name, new OddResolver(), next);
+        this(name, new ResolverImpl(), next);
     }
 
     @Override
@@ -39,7 +37,7 @@ public class OddSupport implements Support {
         return delegate;
     }
 
-    public static class OddResolver implements Resolver {
+    record ResolverImpl() implements Resolver {
         @Override
         public boolean resolve(Trouble trouble) {
             return trouble.getNumber() % 2 == 1;

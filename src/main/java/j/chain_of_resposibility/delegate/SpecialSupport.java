@@ -6,21 +6,19 @@ import org.jetbrains.annotations.NotNull;
 
 public class SpecialSupport implements Support {
     private final String name;
-    private final SpecialResolver resolver;
     private final SupportDelegate delegate;
 
-    public SpecialSupport(String name, SpecialSupport.SpecialResolver resolver, SupportDelegate next) {
+    SpecialSupport(String name, ResolverImpl resolver, SupportDelegate next) {
         this.name = name;
-        this.resolver = resolver;
-        this.delegate = new SupportDelegate(resolver, next);
+        this.delegate = SupportDelegate.create(resolver, next);
     }
 
     public SpecialSupport(String name, int number) {
-        this(name, new SpecialResolver(number), null);
+        this(name, new ResolverImpl(number), null);
     }
 
     public SpecialSupport(String name, SupportDelegate next, int number) {
-        this(name, new SpecialResolver(number), next);
+        this(name, new ResolverImpl(number), next);
     }
 
     @Override
@@ -38,13 +36,12 @@ public class SpecialSupport implements Support {
         return delegate;
     }
 
-    public static class SpecialResolver implements Resolver {
+    @Override
+    public String toString() {
+        return "[" + name + "]";
+    }
 
-        final int number;
-
-        public SpecialResolver(int number) {
-            this.number = number;
-        }
+    record ResolverImpl(int number) implements Resolver {
 
         @Override
         public boolean resolve(Trouble trouble) {
