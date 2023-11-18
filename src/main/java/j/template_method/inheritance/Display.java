@@ -1,6 +1,6 @@
 package j.template_method.inheritance;
 
-public abstract class AbstractDisplay {
+public abstract class Display {
   public abstract void open();
 
   public abstract void print();

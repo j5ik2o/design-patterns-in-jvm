@@ -2,8 +2,8 @@ package j.strategy.delegate;
 
 public final class Main {
   public static void main(String[] args) {
-      Player player1 = Player.of("Taro", new WinningStrategy());
-      Player player2 = Player.of("Hana", new ProbStrategy());
+    Player player1 = Player.of("Taro", new WinningStrategy());
+    Player player2 = Player.of("Hana", new ProbStrategy());
     for (int i = 0; i < 10000; i++) {
       var nextHand1Result = player1.nextHand();
       var nextHand2Result = player2.nextHand();

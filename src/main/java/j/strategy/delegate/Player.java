@@ -11,7 +11,7 @@ public final class Player {
   private final int loseCount;
   private final int gameCount;
 
-    Player(String name, Strategy strategy, int winCount, int loseCount, int gameCount) {
+  Player(String name, Strategy strategy, int winCount, int loseCount, int gameCount) {
     this.name = name;
     this.strategy = strategy;
     this.winCount = winCount;
@@ -19,18 +19,18 @@ public final class Player {
     this.gameCount = gameCount;
   }
 
-    private Player(String name, Strategy strategy) {
+  private Player(String name, Strategy strategy) {
     this(name, strategy, 0, 0, 0);
   }
 
-    public static Player of(
-            String name, Strategy strategy, int winCount, int loseCount, int gameCount) {
-        return new Player(name, strategy, winCount, loseCount, gameCount);
-    }
+  public static Player of(
+      String name, Strategy strategy, int winCount, int loseCount, int gameCount) {
+    return new Player(name, strategy, winCount, loseCount, gameCount);
+  }
 
-    public static Player of(String name, Strategy strategy) {
-        return new Player(name, strategy);
-    }
+  public static Player of(String name, Strategy strategy) {
+    return new Player(name, strategy);
+  }
 
   public Tuple2<Player, Hand> nextHand() {
     var result = strategy.nextHand();

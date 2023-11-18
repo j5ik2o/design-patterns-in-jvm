@@ -1,11 +1,11 @@
 package j.template_method.inheritance;
 
-public final class StringDisplay extends AbstractDisplay {
+public final class StringDisplay extends Display {
   private final String string;
   private final int width;
 
   // コンストラクタ
-  public StringDisplay(String string) {
+  StringDisplay(String string) {
     this.string = string;
     this.width = string.length();
   }

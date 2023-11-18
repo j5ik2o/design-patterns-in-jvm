@@ -14,7 +14,7 @@ public enum Hand {
   }
 
   public static Hand getHand(int handvalue) {
-      return values()[handvalue];
+    return values()[handvalue];
   }
 
   public boolean isStrongerThan(Hand h) {

@@ -4,7 +4,7 @@ public final class StringDisplayDelegate implements DisplayDelegate {
   private final String string;
   private final int width;
 
-  public StringDisplayDelegate(String string) {
+  StringDisplayDelegate(String string) {
     this.string = string;
     this.width = string.length();
   }

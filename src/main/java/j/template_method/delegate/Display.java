@@ -4,7 +4,7 @@ public final class Display {
 
   private final DisplayDelegate delegate;
 
-  public Display(DisplayDelegate delegate) {
+  Display(DisplayDelegate delegate) {
     this.delegate = delegate;
   }
 
