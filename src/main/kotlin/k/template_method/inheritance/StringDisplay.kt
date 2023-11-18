@@ -1,6 +1,6 @@
 package k.template_method.inheritance
 
-class StringDisplay(private val string: String) : AbstractDisplay() {
+class StringDisplay(private val string: String) : Display() {
   private val width: Int = string.length
 
   override fun open() {

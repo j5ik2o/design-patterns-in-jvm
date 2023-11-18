@@ -1,8 +1,6 @@
 package k.template_method.delegate
 
-import j.template_method.delegate.DisplayDelegate
-
-class StringDisplay(private val string: String) : DisplayDelegate {
+class StringDisplayDelegate(private val string: String) : DisplayDelegate {
   private val width: Int = string.length
 
   override fun open() {

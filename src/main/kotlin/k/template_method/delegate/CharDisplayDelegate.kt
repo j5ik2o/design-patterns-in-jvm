@@ -10,6 +10,6 @@ class CharDisplayDelegate(private val ch: Char = 0.toChar()) : DisplayDelegate {
   }
 
   override fun close() {
-    print(ch)
+    println(">>")
   }
 }

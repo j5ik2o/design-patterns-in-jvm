@@ -1,6 +1,6 @@
 package k.template_method.inheritance
 
-class CharDisplay(val ch: Char) : AbstractDisplay() {
+class CharDisplay(val ch: Char) : Display() {
 
   override fun open() {
     // 開始文字列として"<<"を表示する

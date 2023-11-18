@@ -1,7 +1,6 @@
-/* (C)2022 */
 package k.template_method.inheritance
 
-abstract class AbstractDisplay {
+abstract class Display {
   abstract fun open()
 
   abstract fun print()

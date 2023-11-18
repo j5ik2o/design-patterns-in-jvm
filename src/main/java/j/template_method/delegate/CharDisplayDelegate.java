@@ -3,7 +3,7 @@ package j.template_method.delegate;
 public final class CharDisplayDelegate implements DisplayDelegate {
   private final char ch;
 
-  CharDisplayDelegate(char ch) {
+  public CharDisplayDelegate(char ch) {
     this.ch = ch;
   }
 

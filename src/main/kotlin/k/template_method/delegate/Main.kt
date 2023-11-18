@@ -1,4 +1,4 @@
-package k.template_method.inheritance
+package k.template_method.delegate
 
 object Main {
   @JvmStatic
