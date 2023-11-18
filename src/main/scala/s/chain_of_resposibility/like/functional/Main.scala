@@ -10,7 +10,8 @@ object Main extends App {
   val elmo = OddSupport.create("Elmo");
   val fred = LimitSupport.create("Fred", 300);
 
-  var chain = alice.orElse(bob).orElse(charlie).orElse(diana).orElse(elmo).orElse(fred);
+  var chain =
+    alice.orElse(bob).orElse(charlie).orElse(diana).orElse(elmo).orElse(fred);
 
   for (i <- 0 to 500 by 33) {
     chain.applyOrElse(Trouble(i), MessagePrinter.fail)

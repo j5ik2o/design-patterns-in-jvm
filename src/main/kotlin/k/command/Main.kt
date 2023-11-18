@@ -1,9 +1,5 @@
 package k.command
 
-import k.command.command.Command
-import k.command.command.MacroCommand
-import k.command.drawer.DrawCanvas
-import k.command.drawer.DrawCommand
 import java.awt.event.MouseEvent
 import java.awt.event.MouseMotionListener
 import java.awt.event.WindowEvent
@@ -12,6 +8,10 @@ import javax.swing.Box
 import javax.swing.BoxLayout
 import javax.swing.JButton
 import javax.swing.JFrame
+import k.command.command.Command
+import k.command.command.MacroCommand
+import k.command.drawer.DrawCanvas
+import k.command.drawer.DrawCommand
 
 class Main(title: String?) : JFrame(title), MouseMotionListener, WindowListener {
   private val history = MacroCommand()
@@ -40,6 +40,7 @@ class Main(title: String?) : JFrame(title), MouseMotionListener, WindowListener 
   }
 
   override fun mouseMoved(e: MouseEvent) {}
+
   override fun mouseDragged(e: MouseEvent) {
     val cmd: Command = DrawCommand(canvas, e.point)
     history.append(cmd)
@@ -51,10 +52,15 @@ class Main(title: String?) : JFrame(title), MouseMotionListener, WindowListener 
   }
 
   override fun windowActivated(e: WindowEvent) {}
+
   override fun windowClosed(e: WindowEvent) {}
+
   override fun windowDeactivated(e: WindowEvent) {}
+
   override fun windowDeiconified(e: WindowEvent) {}
+
   override fun windowIconified(e: WindowEvent) {}
+
   override fun windowOpened(e: WindowEvent) {}
 
   companion object {

@@ -1,27 +1,27 @@
 package j.decorator.delegate;
 
 public final class StringDisplayDelegate implements DisplayDelegate {
-    private final String string;
+  private final String string;
 
-    public StringDisplayDelegate(String string) {
-        this.string = string;
-    }
+  public StringDisplayDelegate(String string) {
+    this.string = string;
+  }
 
-    @Override
-    public int getColumns() {
-        return string.length();
-    }
+  @Override
+  public int getColumns() {
+    return string.length();
+  }
 
-    @Override
-    public int getRows() {
-        return 1;
-    }
+  @Override
+  public int getRows() {
+    return 1;
+  }
 
-    @Override
-    public String getRowText(int row) {
-        if (row != 0) {
-            throw new IndexOutOfBoundsException();
-        }
-        return string;
+  @Override
+  public String getRowText(int row) {
+    if (row != 0) {
+      throw new IndexOutOfBoundsException();
     }
+    return string;
+  }
 }

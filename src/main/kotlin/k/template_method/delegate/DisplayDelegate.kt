@@ -1,9 +1,9 @@
 package k.template_method.delegate
 
 interface DisplayDelegate {
-    fun open()
+  fun open()
 
-    fun print()
+  fun print()
 
-    fun close()
+  fun close()
 }

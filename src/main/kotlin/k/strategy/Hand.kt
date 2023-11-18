@@ -29,6 +29,7 @@ enum class Hand(private val handName: String, private val handValue: Int) {
 
   companion object {
     private val hands = arrayOf(ROCK, SCISSORS, PAPER)
+
     fun getHand(handvalue: Int): Hand {
       return hands[handvalue]
     }

@@ -13,4 +13,3 @@ final class CharDisplayDelegate(private val ch: Char) extends DisplayDelegate {
     Console.print(ch)
   }
 }
-

@@ -5,40 +5,40 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public abstract class Support {
-    private final String name;
-    private final Support next;
+  private final String name;
+  private final Support next;
 
-    public Support(@NotNull String name, @Nullable Support next) {
-        this.name = name;
-        this.next = next;
+  public Support(@NotNull String name, @Nullable Support next) {
+    this.name = name;
+    this.next = next;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public void support(Trouble trouble) {
+    if (resolve(trouble)) {
+      done(trouble);
+    } else if (next != null) {
+      next.support(trouble);
+    } else {
+      fail(trouble);
     }
+  }
 
-    public String getName() {
-        return name;
-    }
+  @Override
+  public String toString() {
+    return "[" + name + "]";
+  }
 
-    public void support(Trouble trouble) {
-        if (resolve(trouble)) {
-            done(trouble);
-        } else if (next != null) {
-            next.support(trouble);
-        } else {
-            fail(trouble);
-        }
-    }
+  protected abstract boolean resolve(Trouble trouble);
 
-    @Override
-    public String toString() {
-        return "[" + name + "]";
-    }
+  protected void done(Trouble trouble) {
+    System.out.println(trouble + " is resolved by " + this + ".");
+  }
 
-    protected abstract boolean resolve(Trouble trouble);
-
-    protected void done(Trouble trouble) {
-        System.out.println(trouble + " is resolved by " + this + ".");
-    }
-
-    protected void fail(Trouble trouble) {
-        System.out.println(trouble + " cannot be resolved.");
-    }
+  protected void fail(Trouble trouble) {
+    System.out.println(trouble + " cannot be resolved.");
+  }
 }

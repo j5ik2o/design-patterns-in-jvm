@@ -1,9 +1,9 @@
 package j.template_method.delegate;
 
 public interface DisplayDelegate {
-    void open();
+  void open();
 
-    void print();
+  void print();
 
-    void close();
+  void close();
 }

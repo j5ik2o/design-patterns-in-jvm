@@ -3,18 +3,18 @@ package j.chain_of_resposibility.like.functional;
 import j.chain_of_resposibility.Trouble;
 
 public class Main {
-    public static void main(String[] args) {
-        var alice = NoSupport.create("Alice");
-        var bob = LimitSupport.create("Bob", 100);
-        var charlie = SpecialSupport.create("Charlie", 429);
-        var diana = LimitSupport.create("Diana", 200);
-        var elmo = OddSupport.create("Elmo");
-        var fred = LimitSupport.create("Fred", 300);
+  public static void main(String[] args) {
+    var alice = NoSupport.create("Alice");
+    var bob = LimitSupport.create("Bob", 100);
+    var charlie = SpecialSupport.create("Charlie", 429);
+    var diana = LimitSupport.create("Diana", 200);
+    var elmo = OddSupport.create("Elmo");
+    var fred = LimitSupport.create("Fred", 300);
 
-        var chain = alice.orElse(bob).orElse(charlie).orElse(diana).orElse(elmo).orElse(fred);
+    var chain = alice.orElse(bob).orElse(charlie).orElse(diana).orElse(elmo).orElse(fred);
 
-        for (int i = 0; i < 500; i += 33) {
-            chain.apply(new Trouble(i)).orElse(MessagePrinter::fail);
-        }
+    for (int i = 0; i < 500; i += 33) {
+      chain.apply(new Trouble(i)).orElse(MessagePrinter::fail);
     }
+  }
 }

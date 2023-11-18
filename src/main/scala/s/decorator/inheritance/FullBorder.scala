@@ -10,5 +10,6 @@ final class FullBorder(display: Display) extends Border(display) {
     else if (row == display.rows + 1) "+" + makeLine('-', display.columns) + "+"
     else "|" + display.rowText(row - 1) + "|"
 
-  private def makeLine(ch: Char, count: Int) = String.valueOf(ch).repeat(Math.max(0, count))
+  private def makeLine(ch: Char, count: Int) =
+    String.valueOf(ch).repeat(Math.max(0, count))
 }

@@ -6,16 +6,16 @@ import org.jetbrains.annotations.Nullable;
 
 public final class NoSupport extends Support {
 
-    public NoSupport(@NotNull String name, @Nullable Support next) {
-        super(name, next);
-    }
+  public NoSupport(@NotNull String name, @Nullable Support next) {
+    super(name, next);
+  }
 
-    public NoSupport(@NotNull String name) {
-        this(name, null);
-    }
+  public NoSupport(@NotNull String name) {
+    this(name, null);
+  }
 
-    @Override
-    protected boolean resolve(Trouble trouble) {
-        return false;
-    }
+  @Override
+  protected boolean resolve(Trouble trouble) {
+    return false;
+  }
 }

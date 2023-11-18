@@ -9,7 +9,15 @@ object Main {
     b2.show()
     b3.show()
 
-    val b4 = Display.ofSideBorder(Display.ofFullBorder(Display.ofSideBorder(Display.ofFullBorder(Display.ofString("Hello, world.")), '*')), '/')
+    val b4 = Display.ofSideBorder(
+      Display.ofFullBorder(
+        Display.ofSideBorder(
+          Display.ofFullBorder(Display.ofString("Hello, world.")),
+          '*'
+        )
+      ),
+      '/'
+    )
     b4.show()
   }
 }

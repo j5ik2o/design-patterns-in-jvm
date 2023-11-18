@@ -1,9 +1,9 @@
 package j.decorator.inheritance;
 
 public abstract class Border extends Display {
-    protected Display display;
+  protected Display display;
 
-    protected Border(Display display) {
-        this.display = display;
-    }
+  protected Border(Display display) {
+    this.display = display;
+  }
 }

@@ -5,7 +5,7 @@ import org.jetbrains.annotations.NotNull;
 
 public interface Support {
 
-    void support(@NotNull Trouble trouble);
+  void support(@NotNull Trouble trouble);
 
-    SupportDelegate getDelegate();
+  SupportDelegate getDelegate();
 }

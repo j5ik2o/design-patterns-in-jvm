@@ -1,9 +1,9 @@
 package j.decorator.delegate;
 
 public interface DisplayDelegate {
-    int getColumns();
+  int getColumns();
 
-    int getRows();
+  int getRows();
 
-    String getRowText(int row);
+  String getRowText(int row);
 }

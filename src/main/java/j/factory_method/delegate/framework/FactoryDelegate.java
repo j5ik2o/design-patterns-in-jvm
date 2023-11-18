@@ -1,7 +1,7 @@
 package j.factory_method.delegate.framework;
 
 public interface FactoryDelegate {
-    Product createProduct(String owner);
+  Product createProduct(String owner);
 
-    void registerProduct(Product product);
+  void registerProduct(Product product);
 }
