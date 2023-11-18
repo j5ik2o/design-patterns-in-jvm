@@ -1,7 +1,9 @@
-package j.strategy;
+package j.strategy.delegate;
 
 import io.vavr.Tuple;
 import io.vavr.Tuple2;
+import j.strategy.Hand;
+
 import java.security.SecureRandom;
 
 public final class ProbStrategy implements Strategy {
@@ -10,14 +12,14 @@ public final class ProbStrategy implements Strategy {
   private final int currentHandValue;
   private final int[][] history;
 
-  public ProbStrategy(int prevHandValue, int currentHandValue, int[][] history) {
+    ProbStrategy(int prevHandValue, int currentHandValue, int[][] history) {
     this.random = new SecureRandom();
     this.prevHandValue = prevHandValue;
     this.currentHandValue = currentHandValue;
     this.history = history;
   }
 
-  public ProbStrategy() {
+    ProbStrategy() {
     this(
         0,
         0,

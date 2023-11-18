@@ -8,15 +8,13 @@ public enum Hand {
   private String name;
   private int handvalue;
 
-  private static Hand[] hands = {ROCK, SCISSORS, PAPER};
-
   private Hand(String name, int handvalue) {
     this.name = name;
     this.handvalue = handvalue;
   }
 
   public static Hand getHand(int handvalue) {
-    return hands[handvalue];
+      return values()[handvalue];
   }
 
   public boolean isStrongerThan(Hand h) {
