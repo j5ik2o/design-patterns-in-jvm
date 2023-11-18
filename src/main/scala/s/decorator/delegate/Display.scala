@@ -1,13 +1,15 @@
 package s.decorator.delegate
 
 object Display {
-  def ofString(string: String) = new Display(new StringDisplayDelegate(string))
+  def ofString(string: String): Display = new Display(
+    new StringDisplayDelegate(string)
+  )
 
-  def ofSideBorder(display: Display, ch: Char) = new Display(
+  def ofSideBorder(display: Display, ch: Char): Display = new Display(
     new SideBorderDelegate(display, ch)
   )
 
-  def ofFullBorder(display: Display) = new Display(
+  def ofFullBorder(display: Display): Display = new Display(
     new FullBorderDelegate(display)
   )
 }
