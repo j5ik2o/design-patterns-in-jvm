@@ -2,11 +2,12 @@ package s.decorator.inheritance
 
 object Display {
 
-  def ofString(string: String) = new StringDisplay(string)
+  def ofString(string: String): Display = new StringDisplay(string)
 
-  def ofSideBorder(display: Display, ch: Char) = new SideBorder(display, ch)
+  def ofSideBorder(display: Display, ch: Char): Display =
+    new SideBorder(display, ch)
 
-  def ofFullBorder(display: Display): FullBorder = new FullBorder(display)
+  def ofFullBorder(display: Display): Display = new FullBorder(display)
 
 }
 

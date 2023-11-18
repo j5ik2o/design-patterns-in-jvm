@@ -21,7 +21,7 @@ final class Display(private val delegate: DisplayDelegate) {
 
   def rowText(row: Int): String = delegate.rowText(row)
 
-  private[delegate] def show(): Unit = {
+  def show(): Unit = {
     for (i <- 0 until rows) {
       println(rowText(i))
     }
