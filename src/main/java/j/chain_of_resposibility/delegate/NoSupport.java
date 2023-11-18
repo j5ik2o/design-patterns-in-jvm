@@ -12,11 +12,11 @@ public final class NoSupport implements Support {
     this.delegate = SupportDelegate.create(toString(), resolver, next);
   }
 
-    NoSupport(@NotNull String name) {
+  NoSupport(@NotNull String name) {
     this(name, new ResolverImpl(), null);
   }
 
-    NoSupport(@NotNull String name, @NotNull Support next) {
+  NoSupport(@NotNull String name, @NotNull Support next) {
     this(name, new ResolverImpl(), next.getDelegate());
   }
 

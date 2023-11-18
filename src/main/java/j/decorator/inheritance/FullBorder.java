@@ -1,7 +1,7 @@
 package j.decorator.inheritance;
 
 public final class FullBorder extends Border {
-  public FullBorder(Display display) {
+  FullBorder(Display display) {
     super(display);
   }
 

@@ -14,11 +14,11 @@ public final class OddSupport implements Support {
     this.delegate = SupportDelegate.create(toString(), resolver, next);
   }
 
-    OddSupport(@NotNull String name) {
+  OddSupport(@NotNull String name) {
     this(name, new ResolverImpl(), null);
   }
 
-    OddSupport(@NotNull String name, @NotNull Support next) {
+  OddSupport(@NotNull String name, @NotNull Support next) {
     this(name, new ResolverImpl(), next.getDelegate());
   }
 

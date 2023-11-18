@@ -8,7 +8,7 @@ public final class SupportFactory {
   }
 
   public static Support createLimitSupport(@NotNull String name, int limit, Support next) {
-      return new LimitSupport(name, limit, next);
+    return new LimitSupport(name, limit, next);
   }
 
   public static Support createLimitSupport(@NotNull String name, int limit) {

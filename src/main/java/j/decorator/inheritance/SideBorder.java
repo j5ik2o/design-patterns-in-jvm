@@ -3,7 +3,7 @@ package j.decorator.inheritance;
 public final class SideBorder extends Border {
   private final char borderChar;
 
-  public SideBorder(Display display, char ch) {
+  SideBorder(Display display, char ch) {
     super(display);
     this.borderChar = ch;
   }

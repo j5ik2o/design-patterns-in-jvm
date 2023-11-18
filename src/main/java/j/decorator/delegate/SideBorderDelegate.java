@@ -4,7 +4,7 @@ public final class SideBorderDelegate implements DisplayDelegate {
   private final Display display;
   private final char borderChar;
 
-  public SideBorderDelegate(Display display, char ch) {
+  SideBorderDelegate(Display display, char ch) {
     this.display = display;
     borderChar = ch;
   }

@@ -14,11 +14,11 @@ public final class SpecialSupport implements Support {
     this.delegate = SupportDelegate.create(toString(), resolver, next);
   }
 
-    SpecialSupport(@NotNull String name, int number) {
+  SpecialSupport(@NotNull String name, int number) {
     this(name, new ResolverImpl(number), null);
   }
 
-    SpecialSupport(@NotNull String name, int number, @NotNull Support next) {
+  SpecialSupport(@NotNull String name, int number, @NotNull Support next) {
     this(name, new ResolverImpl(number), next.getDelegate());
   }
 

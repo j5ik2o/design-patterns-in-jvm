@@ -3,7 +3,7 @@ package j.decorator.delegate;
 public final class FullBorderDelegate implements DisplayDelegate {
   private final Display display;
 
-  public FullBorderDelegate(Display display) {
+  FullBorderDelegate(Display display) {
     this.display = display;
   }
 

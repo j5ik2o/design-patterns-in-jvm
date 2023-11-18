@@ -4,7 +4,7 @@ public final class StringDisplay extends Display {
 
   private final String string;
 
-  public StringDisplay(String string) {
+  StringDisplay(String string) {
     this.string = string;
   }
 

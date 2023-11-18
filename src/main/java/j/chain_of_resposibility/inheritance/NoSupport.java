@@ -6,7 +6,7 @@ import org.jetbrains.annotations.Nullable;
 
 public final class NoSupport extends Support {
 
-    NoSupport(@NotNull String name, @Nullable Support next) {
+  NoSupport(@NotNull String name, @Nullable Support next) {
     super(name, next);
   }
 

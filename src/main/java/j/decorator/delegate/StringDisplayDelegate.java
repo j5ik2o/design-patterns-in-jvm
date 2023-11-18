@@ -3,7 +3,7 @@ package j.decorator.delegate;
 public final class StringDisplayDelegate implements DisplayDelegate {
   private final String string;
 
-  public StringDisplayDelegate(String string) {
+  StringDisplayDelegate(String string) {
     this.string = string;
   }
 
