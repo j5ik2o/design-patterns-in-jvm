@@ -18,7 +18,6 @@ public final class LimitSupport extends Support {
 
   @Override
   protected boolean resolve(Trouble trouble) {
-    // System.out.printf("LimitSupport: name = %s, limit = %d\n", getName(), limit);
     return trouble.getNumber() < limit;
   }
 }

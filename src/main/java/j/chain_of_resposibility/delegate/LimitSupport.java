@@ -12,17 +12,16 @@ public final class LimitSupport implements Support {
     this.delegate = SupportDelegate.create(toString(), resolver, next);
   }
 
-  public LimitSupport(String name, int limit) {
+    LimitSupport(String name, int limit) {
     this(name, new ResolverImpl(limit), null);
   }
 
-  public LimitSupport(String name, Support next, int limit) {
+    LimitSupport(String name, int limit, Support next) {
     this(name, new ResolverImpl(limit), next.getDelegate());
   }
 
   @Override
   public void support(@NotNull Trouble trouble) {
-    System.out.printf("LimitSupport.support(%s)%n", trouble);
     delegate.support(trouble);
   }
 
