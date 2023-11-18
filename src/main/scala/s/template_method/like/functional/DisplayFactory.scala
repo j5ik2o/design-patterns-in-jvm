@@ -1,5 +1,7 @@
 package s.template_method.like.functional
 
+import s.template_method.like.functional.Display.DisplayDelegate
+
 object DisplayFactory {
 
   def createString(string: String): Display = {

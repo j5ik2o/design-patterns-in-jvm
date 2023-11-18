@@ -8,6 +8,6 @@ object MessagePrinter {
   }
 
   def fail(trouble: Trouble): Unit = {
-    System.out.println(trouble + " cannot be resolved.")
+    System.out.println(trouble.toString + " cannot be resolved.")
   }
 }

@@ -5,7 +5,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public final class SpecialSupport extends Support {
-    private int number; // この番号だけ解決できる
+    private final int number; // この番号だけ解決できる
 
     public SpecialSupport(@NotNull String name, int number, @Nullable Support next) {
         super(name, next);
