@@ -1,6 +1,6 @@
 plugins {
 	id "com.diffplug.spotless" version "6.22.0"
-	// id 'org.jetbrains.kotlin.jvm' version '1.9.10'
+	id 'org.jetbrains.kotlin.jvm' version '2.0.0-Beta1'
 	id 'scala'
 }
 
@@ -13,14 +13,10 @@ repositories {
 
 dependencies {
 	implementation "io.vavr:vavr:0.10.4"
-	// implementation "org.jetbrains.kotlin:kotlin-stdlib"
+	implementation "org.jetbrains.kotlin:kotlin-stdlib"
 	implementation 'org.scala-lang:scala-library:2.13.12'
     implementation 'org.jetbrains:annotations:24.1.0'
 
-}
-
-tasks.withType(JavaCompile).each {
-    it.options.compilerArgs.add('--enable-preview')
 }
 
 java {
@@ -39,9 +35,9 @@ spotless {
 	java {
         googleJavaFormat()
 	}
-//	kotlin {
-//		ktfmt()    // has its own section below
-//	}
+	kotlin {
+		ktfmt()    // has its own section below
+	}
 	kotlinGradle {
 		target '*.gradle.kts' // default target for kotlinGradle
 		ktlint() // or ktfmt() or prettier()
