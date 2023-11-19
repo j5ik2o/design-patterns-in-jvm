@@ -10,9 +10,10 @@ public final class Main {
     var charlie = SupportFactory.createSpecialSupport("Charlie", 429, diana);
     var bob = SupportFactory.createLimitSupport("Bob", 100, charlie);
     var alice = SupportFactory.createNoSupport("Alice", bob);
-    var support = new SupportRole();
+    var context = new SupportContext(alice);
+
     for (var i = 0; i < 500; i += 33) {
-      support.support(alice, new Trouble(i));
+        context.support(new Trouble(i));
     }
   }
 }
