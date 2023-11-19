@@ -1,4 +1,4 @@
-package j.template_method.like.functional;
+package j.template_method.like.functions;
 
 public final class DisplayFactory {
   public static Display createString(String str) {

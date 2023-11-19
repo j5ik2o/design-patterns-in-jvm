@@ -5,7 +5,7 @@ import java.util.function.Consumer;
 
 public record ControlBreak(Trouble trouble, boolean controlBreak) {
 
-  static ControlBreak of(Trouble trouble) {
+    public static ControlBreak of(Trouble trouble) {
     return new ControlBreak(trouble, false);
   }
 

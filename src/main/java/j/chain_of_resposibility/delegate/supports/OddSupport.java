@@ -1,6 +1,9 @@
-package j.chain_of_resposibility.delegate;
+package j.chain_of_resposibility.delegate.supports;
 
 import j.chain_of_resposibility.Trouble;
+import j.chain_of_resposibility.delegate.Resolver;
+import j.chain_of_resposibility.delegate.Support;
+import j.chain_of_resposibility.delegate.SupportDelegate;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -9,16 +12,17 @@ public final class OddSupport implements Support {
 
   private final SupportDelegate delegate;
 
-  OddSupport(@NotNull String name, @NotNull ResolverImpl resolver, @Nullable SupportDelegate next) {
+    public OddSupport(
+            @NotNull String name, @NotNull ResolverImpl resolver, @Nullable SupportDelegate next) {
     this.name = name;
     this.delegate = SupportDelegate.create(toString(), resolver, next);
   }
 
-  OddSupport(@NotNull String name) {
+    public OddSupport(@NotNull String name) {
     this(name, new ResolverImpl(), null);
   }
 
-  OddSupport(@NotNull String name, @NotNull Support next) {
+    public OddSupport(@NotNull String name, @NotNull Support next) {
     this(name, new ResolverImpl(), next.getDelegate());
   }
 
@@ -37,7 +41,7 @@ public final class OddSupport implements Support {
     return "[" + name + "]";
   }
 
-  record ResolverImpl() implements Resolver {
+    public record ResolverImpl() implements Resolver {
     @Override
     public boolean resolve(Trouble trouble) {
       return trouble.getNumber() % 2 == 1;

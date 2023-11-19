@@ -1,6 +1,9 @@
-package j.chain_of_resposibility.delegate;
+package j.chain_of_resposibility.delegate.supports;
 
 import j.chain_of_resposibility.Trouble;
+import j.chain_of_resposibility.delegate.Resolver;
+import j.chain_of_resposibility.delegate.Support;
+import j.chain_of_resposibility.delegate.SupportDelegate;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -8,17 +11,17 @@ public final class SpecialSupport implements Support {
   private final String name;
   private final SupportDelegate delegate;
 
-  SpecialSupport(
+    public SpecialSupport(
       @NotNull String name, @NotNull ResolverImpl resolver, @Nullable SupportDelegate next) {
     this.name = name;
     this.delegate = SupportDelegate.create(toString(), resolver, next);
   }
 
-  SpecialSupport(@NotNull String name, int number) {
+    public SpecialSupport(@NotNull String name, int number) {
     this(name, new ResolverImpl(number), null);
   }
 
-  SpecialSupport(@NotNull String name, int number, @NotNull Support next) {
+    public SpecialSupport(@NotNull String name, int number, @NotNull Support next) {
     this(name, new ResolverImpl(number), next.getDelegate());
   }
 
@@ -38,7 +41,7 @@ public final class SpecialSupport implements Support {
     return "[" + name + "]";
   }
 
-  record ResolverImpl(int number) implements Resolver {
+    public record ResolverImpl(int number) implements Resolver {
 
     @Override
     public boolean resolve(Trouble trouble) {

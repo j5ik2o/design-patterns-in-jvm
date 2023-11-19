@@ -1,13 +1,14 @@
-package j.chain_of_resposibility.inheritance;
+package j.chain_of_resposibility.inheritance.supports;
 
 import j.chain_of_resposibility.Trouble;
+import j.chain_of_resposibility.inheritance.Support;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public final class SpecialSupport extends Support {
   private final int number;
 
-  SpecialSupport(@NotNull String name, int number, @Nullable Support next) {
+    public SpecialSupport(@NotNull String name, int number, @Nullable Support next) {
     super(name, next);
     this.number = number;
   }

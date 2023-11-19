@@ -4,12 +4,12 @@ import j.chain_of_resposibility.Trouble;
 
 public class Main {
   public static void main(String[] args) {
-    var alice = NoSupport.create("Alice");
-    var bob = LimitSupport.create("Bob", 100);
-    var charlie = SpecialSupport.create("Charlie", 429);
-    var diana = LimitSupport.create("Diana", 200);
-    var elmo = OddSupport.create("Elmo");
-    var fred = LimitSupport.create("Fred", 300);
+      var alice = SupportFactory.createNoSupport("Alice");
+      var bob = SupportFactory.createLimitSupport("Bob", 100);
+      var charlie = SupportFactory.createSpecialSupport("Charlie", 429);
+      var diana = SupportFactory.createLimitSupport("Diana", 200);
+      var elmo = SupportFactory.createOddSupport("Elmo");
+      var fred = SupportFactory.createLimitSupport("Fred", 300);
 
     var chain = alice.orElse(bob).orElse(charlie).orElse(diana).orElse(elmo).orElse(fred);
 

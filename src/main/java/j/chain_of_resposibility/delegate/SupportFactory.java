@@ -1,5 +1,9 @@
 package j.chain_of_resposibility.delegate;
 
+import j.chain_of_resposibility.delegate.supports.LimitSupport;
+import j.chain_of_resposibility.delegate.supports.NoSupport;
+import j.chain_of_resposibility.delegate.supports.OddSupport;
+import j.chain_of_resposibility.delegate.supports.SpecialSupport;
 import org.jetbrains.annotations.NotNull;
 
 public final class SupportFactory {

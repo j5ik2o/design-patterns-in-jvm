@@ -1,5 +1,10 @@
 package j.chain_of_resposibility.inheritance;
 
+import j.chain_of_resposibility.inheritance.supports.LimitSupport;
+import j.chain_of_resposibility.inheritance.supports.NoSupport;
+import j.chain_of_resposibility.inheritance.supports.OddSupport;
+import j.chain_of_resposibility.inheritance.supports.SpecialSupport;
+
 public final class SupportFactory {
   public static Support createNoSupport(String name, Support next) {
     return new NoSupport(name, next);

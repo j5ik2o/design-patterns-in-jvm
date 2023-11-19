@@ -1,6 +1,7 @@
-package j.chain_of_resposibility.inheritance;
+package j.chain_of_resposibility.inheritance.supports;
 
 import j.chain_of_resposibility.Trouble;
+import j.chain_of_resposibility.inheritance.Support;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

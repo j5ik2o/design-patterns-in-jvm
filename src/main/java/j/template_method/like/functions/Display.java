@@ -1,4 +1,4 @@
-package j.template_method.like.functional;
+package j.template_method.like.functions;
 
 import java.util.function.Supplier;
 

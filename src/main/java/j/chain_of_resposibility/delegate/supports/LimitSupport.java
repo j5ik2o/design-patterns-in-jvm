@@ -1,22 +1,25 @@
-package j.chain_of_resposibility.delegate;
+package j.chain_of_resposibility.delegate.supports;
 
 import j.chain_of_resposibility.Trouble;
+import j.chain_of_resposibility.delegate.Resolver;
+import j.chain_of_resposibility.delegate.Support;
+import j.chain_of_resposibility.delegate.SupportDelegate;
 import org.jetbrains.annotations.NotNull;
 
 public final class LimitSupport implements Support {
   private final String name;
   private final SupportDelegate delegate;
 
-  LimitSupport(String name, ResolverImpl resolver, SupportDelegate next) {
+    public LimitSupport(String name, ResolverImpl resolver, SupportDelegate next) {
     this.name = name;
     this.delegate = SupportDelegate.create(toString(), resolver, next);
   }
 
-  LimitSupport(String name, int limit) {
+    public LimitSupport(String name, int limit) {
     this(name, new ResolverImpl(limit), null);
   }
 
-  LimitSupport(String name, int limit, Support next) {
+    public LimitSupport(String name, int limit, Support next) {
     this(name, new ResolverImpl(limit), next.getDelegate());
   }
 
@@ -35,7 +38,7 @@ public final class LimitSupport implements Support {
     return "[" + name + "]";
   }
 
-  record ResolverImpl(int limit) implements Resolver {
+    public record ResolverImpl(int limit) implements Resolver {
 
     @Override
     public boolean resolve(Trouble trouble) {
