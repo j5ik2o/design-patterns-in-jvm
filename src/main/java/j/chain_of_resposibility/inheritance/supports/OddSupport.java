@@ -6,11 +6,11 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public final class OddSupport extends Support {
-    public OddSupport(@NotNull String name, @Nullable Support next) {
+  public OddSupport(@NotNull String name, @Nullable Support next) {
     super(name, next);
   }
 
-    public OddSupport(@NotNull String name) {
+  public OddSupport(@NotNull String name) {
     this(name, null);
   }
 

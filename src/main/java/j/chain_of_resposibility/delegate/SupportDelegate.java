@@ -25,7 +25,7 @@ public final class SupportDelegate {
     return new SupportDelegate(name, resolver);
   }
 
-    public static SupportDelegate create(
+  public static SupportDelegate create(
       String name, @NotNull Resolver resolver, @Nullable SupportDelegate next) {
     return new SupportDelegate(name, resolver, next);
   }

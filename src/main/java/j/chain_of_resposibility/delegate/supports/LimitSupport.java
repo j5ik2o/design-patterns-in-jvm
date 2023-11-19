@@ -10,16 +10,16 @@ public final class LimitSupport implements Support {
   private final String name;
   private final SupportDelegate delegate;
 
-    public LimitSupport(String name, ResolverImpl resolver, SupportDelegate next) {
+  public LimitSupport(String name, ResolverImpl resolver, SupportDelegate next) {
     this.name = name;
     this.delegate = SupportDelegate.create(toString(), resolver, next);
   }
 
-    public LimitSupport(String name, int limit) {
+  public LimitSupport(String name, int limit) {
     this(name, new ResolverImpl(limit), null);
   }
 
-    public LimitSupport(String name, int limit, Support next) {
+  public LimitSupport(String name, int limit, Support next) {
     this(name, new ResolverImpl(limit), next.getDelegate());
   }
 
@@ -38,7 +38,7 @@ public final class LimitSupport implements Support {
     return "[" + name + "]";
   }
 
-    public record ResolverImpl(int limit) implements Resolver {
+  public record ResolverImpl(int limit) implements Resolver {
 
     @Override
     public boolean resolve(Trouble trouble) {

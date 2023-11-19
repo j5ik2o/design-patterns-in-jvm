@@ -13,7 +13,7 @@ public final class Main {
     var context = new SupportContext(alice);
 
     for (var i = 0; i < 500; i += 33) {
-        context.support(new Trouble(i));
+      context.support(new Trouble(i));
     }
   }
 }

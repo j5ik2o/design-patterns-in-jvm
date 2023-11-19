@@ -12,17 +12,17 @@ public final class OddSupport implements Support {
 
   private final SupportDelegate delegate;
 
-    public OddSupport(
-            @NotNull String name, @NotNull ResolverImpl resolver, @Nullable SupportDelegate next) {
+  public OddSupport(
+      @NotNull String name, @NotNull ResolverImpl resolver, @Nullable SupportDelegate next) {
     this.name = name;
     this.delegate = SupportDelegate.create(toString(), resolver, next);
   }
 
-    public OddSupport(@NotNull String name) {
+  public OddSupport(@NotNull String name) {
     this(name, new ResolverImpl(), null);
   }
 
-    public OddSupport(@NotNull String name, @NotNull Support next) {
+  public OddSupport(@NotNull String name, @NotNull Support next) {
     this(name, new ResolverImpl(), next.getDelegate());
   }
 
@@ -41,7 +41,7 @@ public final class OddSupport implements Support {
     return "[" + name + "]";
   }
 
-    public record ResolverImpl() implements Resolver {
+  public record ResolverImpl() implements Resolver {
     @Override
     public boolean resolve(Trouble trouble) {
       return trouble.getNumber() % 2 == 1;

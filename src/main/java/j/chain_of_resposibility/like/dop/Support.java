@@ -5,7 +5,7 @@ public sealed interface Support
         Supports.OddSupport,
         Supports.LimitSupport,
         Supports.SpecialSupport {
-    String name();
+  String name();
 
   Support next();
 }

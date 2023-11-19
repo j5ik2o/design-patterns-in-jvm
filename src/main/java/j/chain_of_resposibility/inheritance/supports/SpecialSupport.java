@@ -8,7 +8,7 @@ import org.jetbrains.annotations.Nullable;
 public final class SpecialSupport extends Support {
   private final int number;
 
-    public SpecialSupport(@NotNull String name, int number, @Nullable Support next) {
+  public SpecialSupport(@NotNull String name, int number, @Nullable Support next) {
     super(name, next);
     this.number = number;
   }
