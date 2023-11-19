@@ -1,10 +1,9 @@
-package j.chain_of_resposibility.like.functional;
+package j.chain_of_resposibility.like.functions;
 
-public final class OddSupport {
-
-  public static Support create(String name) {
+public final class LimitSupport {
+  public static Support create(String name, int limit) {
     return trouble -> {
-      if (trouble.getNumber() % 2 == 1) {
+      if (trouble.getNumber() < limit) {
         MessagePrinter.done(name, trouble);
         return ControlBreak.of(trouble).withControlBreak(true);
       } else {

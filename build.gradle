@@ -17,6 +17,22 @@ dependencies {
 	implementation 'org.scala-lang:scala-library:2.13.12'
 }
 
+tasks.withType(JavaCompile).each {
+    it.options.compilerArgs.add('--enable-preview')
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    ext {
+        set('vendor', JvmVendorSpec.ADOPTIUM)
+    }
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+        vendor = JvmVendorSpec.ADOPTIUM
+    }
+    withSourcesJar()
+}
+
 spotless {
 	java {
         googleJavaFormat()

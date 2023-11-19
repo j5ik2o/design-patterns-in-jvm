@@ -1,4 +1,4 @@
-package j.chain_of_resposibility.like.functional;
+package j.chain_of_resposibility.like.functions;
 
 import j.chain_of_resposibility.Trouble;
 
