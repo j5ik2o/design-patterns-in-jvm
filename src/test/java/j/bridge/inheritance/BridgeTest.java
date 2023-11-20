@@ -2,7 +2,7 @@ package j.bridge.inheritance;
 
 import org.junit.jupiter.api.Test;
 
-public class UnitTest {
+public class BridgeTest {
     @Test
     public void test() {
         Display d1 = new Display(new StringDisplayImpl("Hello, Japan."));

@@ -2,7 +2,7 @@ package j.composite.inheritance;
 
 import org.junit.jupiter.api.Test;
 
-public class UnitTest {
+public class CompositeTest {
     @Test
     public void test() {
         Directory rootDir = new Directory("root");

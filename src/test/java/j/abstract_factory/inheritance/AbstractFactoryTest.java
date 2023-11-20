@@ -4,7 +4,7 @@ import j.abstract_factory.inheritance.factory.Factory;
 import j.abstract_factory.inheritance.factory.Page;
 import org.junit.jupiter.api.Test;
 
-public class UnitTest {
+public class AbstractFactoryTest {
     @Test
     public void test_1() {
         String filename = "j.abstract_factory.inheritance/listYahoo.html";

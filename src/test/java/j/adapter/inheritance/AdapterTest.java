@@ -2,7 +2,7 @@ package j.adapter.inheritance;
 
 import org.junit.jupiter.api.Test;
 
-public class UnitTest {
+public class AdapterTest {
 
     @Test
     public void test() {

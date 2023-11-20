@@ -1,9 +1,9 @@
-package j.chain_of_resposibility.inheritance;
+package j.chain_of_responsibility.delegate;
 
-import j.chain_of_resposibility.Trouble;
+import j.chain_of_responsibility.Trouble;
 import org.junit.jupiter.api.Test;
 
-public class UnitTest {
+public class ChainOfResponsibilityTest {
     @Test
     public void test() {
         var fred = SupportFactory.createLimitSupport("Fred", 300);
@@ -18,4 +18,5 @@ public class UnitTest {
             alice.support(new Trouble(i));
         }
     }
+
 }

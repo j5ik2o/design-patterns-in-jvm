@@ -2,7 +2,7 @@ package j.builder.inheritance;
 
 import org.junit.jupiter.api.Test;
 
-public class UnitTest {
+public class BuilderTest {
     @Test
     public void testText() {
         TextBuilder textbuilder = new TextBuilder();
