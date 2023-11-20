@@ -1,4 +1,4 @@
-package j.builder;
+package j.builder.inheritance;
 
 public class Director {
     private Builder builder;

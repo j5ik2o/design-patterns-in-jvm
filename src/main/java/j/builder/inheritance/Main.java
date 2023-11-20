@@ -1,4 +1,4 @@
-package j.builder;
+package j.builder.inheritance;
 
 public class Main {
     public static void main(String[] args) {

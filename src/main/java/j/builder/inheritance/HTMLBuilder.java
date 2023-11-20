@@ -1,4 +1,4 @@
-package j.builder;
+package j.builder.inheritance;
 
 import java.io.FileWriter;
 import java.io.IOException;

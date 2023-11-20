@@ -1,4 +1,4 @@
-package j.builder;
+package j.builder.inheritance;
 
 public class TextBuilder extends Builder {
     private StringBuilder sb = new StringBuilder();

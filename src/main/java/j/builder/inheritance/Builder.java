@@ -1,4 +1,4 @@
-package j.builder;
+package j.builder.inheritance;
 
 public abstract class Builder {
     public abstract void makeTitle(String title);

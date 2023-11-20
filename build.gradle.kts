@@ -17,6 +17,7 @@ repositories {
 dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.1")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.10.1")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
     implementation("io.vavr:vavr:0.10.4")
     implementation("org.jetbrains.kotlin:kotlin-stdlib")
