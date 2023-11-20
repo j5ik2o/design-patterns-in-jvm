@@ -1,6 +1,5 @@
 package j.abstract_factory.inheritance.divfactory;
 
-
 import j.abstract_factory.inheritance.factory.Factory;
 import j.abstract_factory.inheritance.factory.Link;
 import j.abstract_factory.inheritance.factory.Page;

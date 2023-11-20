@@ -20,7 +20,7 @@ public class TextBuilder extends Builder {
 
     @Override
     public void makeItems(String[] items) {
-        for (String s: items) {
+        for (String s : items) {
             sb.append("　・");
             sb.append(s);
             sb.append("\n");

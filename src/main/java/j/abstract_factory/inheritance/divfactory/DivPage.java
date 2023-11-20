@@ -1,6 +1,5 @@
 package j.abstract_factory.inheritance.divfactory;
 
-
 import j.abstract_factory.inheritance.factory.Item;
 import j.abstract_factory.inheritance.factory.Page;
 

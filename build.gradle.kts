@@ -11,7 +11,7 @@ group = "org.example"
 version = "1.0-SNAPSHOT"
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 dependencies {
@@ -58,17 +58,17 @@ tasks {
 }
 
 spotless {
-	java {
+    java {
         googleJavaFormat()
-	}
-	kotlin {
+    }
+    kotlin {
         ktfmt()
-	}
-	kotlinGradle {
+    }
+    kotlinGradle {
         target("*.gradle.kts")
         ktlint()
-	}
-	scala {
+    }
+    scala {
         scalafmt()
-	}
+    }
 }

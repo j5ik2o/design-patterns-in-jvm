@@ -23,7 +23,9 @@ public abstract class Page {
 
     public void output(String filename) {
         try {
-            Files.writeString(Path.of(filename), makeHTML(),
+            Files.writeString(
+                    Path.of(filename),
+                    makeHTML(),
                     StandardOpenOption.CREATE,
                     StandardOpenOption.TRUNCATE_EXISTING,
                     StandardOpenOption.WRITE);
