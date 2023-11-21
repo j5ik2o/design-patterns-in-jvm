@@ -1,6 +1,6 @@
-package j.bridge.inheritance;
+package j.bridge.delegate;
 
-public class Display {
+public class Display implements Displaible {
     private final DisplayImpl impl;
 
     public Display(DisplayImpl impl) {

@@ -1,6 +1,6 @@
-package j.bridge.inheritance;
+package j.bridge.delegate;
 
-public class StringDisplayImpl extends DisplayImpl {
+public class StringDisplayImpl implements DisplayImpl {
     private final String string;
     private final int width;
 
