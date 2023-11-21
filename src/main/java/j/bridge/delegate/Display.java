@@ -1,6 +1,6 @@
 package j.bridge.delegate;
 
-public class Display implements Displaible {
+public final class Display implements Displayable {
     private final DisplayImpl impl;
 
     public Display(DisplayImpl impl) {

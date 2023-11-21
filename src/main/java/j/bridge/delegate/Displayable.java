@@ -1,5 +1,5 @@
 package j.bridge.delegate;
 
-public interface Displaible {
+public interface Displayable {
     void display();
 }

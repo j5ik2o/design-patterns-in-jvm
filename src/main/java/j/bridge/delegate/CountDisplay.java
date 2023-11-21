@@ -1,6 +1,6 @@
 package j.bridge.delegate;
 
-public class CountDisplay implements Displaible {
+public class CountDisplay implements Displayable {
     private final Display display;
 
     public CountDisplay(DisplayImpl impl) {
