@@ -1,12 +1,18 @@
 package j.builder.inheritance;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
 
 public class HTMLBuilder extends Builder {
+    private final File workDir;
     private String filename = "untitled.html";
-    private StringBuilder sb = new StringBuilder();
+    private final StringBuilder sb = new StringBuilder();
+
+    public HTMLBuilder(File workDir) {
+        this.workDir = workDir;
+    }
 
     @Override
     public void makeTitle(String title) {
@@ -41,19 +47,16 @@ public class HTMLBuilder extends Builder {
     }
 
     @Override
-    public void close() {
+    public void close() throws IOException {
+        var path = new File(workDir, filename);
         sb.append("</body>");
         sb.append("</html>\n");
-        try {
-            Writer writer = new FileWriter(filename);
-            writer.write(sb.toString());
-            writer.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Writer writer = new FileWriter(path);
+        writer.write(sb.toString());
+        writer.close();
     }
 
     public String getHTMLResult() {
-        return filename;
+        return new File(workDir, filename).toString();
     }
 }

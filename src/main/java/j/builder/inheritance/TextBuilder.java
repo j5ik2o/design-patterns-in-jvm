@@ -1,5 +1,7 @@
 package j.builder.inheritance;
 
+import java.io.IOException;
+
 public class TextBuilder extends Builder {
     private StringBuilder sb = new StringBuilder();
 
@@ -29,7 +31,7 @@ public class TextBuilder extends Builder {
     }
 
     @Override
-    public void close() {
+    public void close() throws IOException {
         sb.append("==============================\n");
     }
 

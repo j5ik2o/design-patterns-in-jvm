@@ -1,5 +1,7 @@
 package j.builder.inheritance;
 
+import java.io.IOException;
+
 public class Director {
     private Builder builder;
 
@@ -9,7 +11,7 @@ public class Director {
     }
 
     // 文書を作るメソッド
-    public void construct() {
+    public void construct() throws IOException {
         builder.makeTitle("Greeting");
         builder.makeString("一般的なあいさつ");
         builder.makeItems(

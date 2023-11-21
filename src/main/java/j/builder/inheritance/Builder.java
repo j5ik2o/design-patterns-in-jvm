@@ -1,5 +1,7 @@
 package j.builder.inheritance;
 
+import java.io.IOException;
+
 public abstract class Builder {
     public abstract void makeTitle(String title);
 
@@ -7,5 +9,5 @@ public abstract class Builder {
 
     public abstract void makeItems(String[] items);
 
-    public abstract void close();
+    public abstract void close() throws IOException;
 }

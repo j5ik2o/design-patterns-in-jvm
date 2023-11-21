@@ -12,6 +12,9 @@ version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
+    maven {
+        url = uri("https://www.seasar.org/maven/maven2/")
+    }
 }
 
 dependencies {
@@ -23,6 +26,8 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib")
     implementation("org.scala-lang:scala-library:2.13.12")
     implementation("org.jetbrains:annotations:24.1.0")
+    implementation("org.seasar.util:s2util:0.0.1")
+
 }
 
 java {

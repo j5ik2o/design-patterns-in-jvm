@@ -1,7 +1,12 @@
 package j.builder.inheritance;
 
+import org.seasar.util.io.ResourceUtil;
+
+import java.io.File;
+import java.io.IOException;
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         if (args.length != 1) {
             usage();
             System.exit(0);
@@ -13,7 +18,8 @@ public class Main {
             String result = textbuilder.getTextResult();
             System.out.println(result);
         } else if (args[0].equals("html")) {
-            HTMLBuilder htmlbuilder = new HTMLBuilder();
+            var workDir = ResourceUtil.getResourcePath(Main.class);
+            HTMLBuilder htmlbuilder = new HTMLBuilder(new File(workDir));
             Director director = new Director(htmlbuilder);
             director.construct();
             String filename = htmlbuilder.getHTMLResult();
