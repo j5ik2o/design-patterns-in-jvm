@@ -1,11 +1,11 @@
-package j.builder.inheritance;
+package j.builder.delegate;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
 
-public final class HTMLBuilder extends Builder {
+public final class HTMLBuilder implements Builder {
     private final File workDir;
     private String filename = "untitled.html";
     private final StringBuilder sb = new StringBuilder();

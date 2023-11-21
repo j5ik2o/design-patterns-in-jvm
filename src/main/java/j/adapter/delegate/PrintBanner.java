@@ -1,6 +1,8 @@
-package j.adapter.inheritance;
+package j.adapter.delegate;
 
-public final class PrintBanner extends Print {
+import j.adapter.inheritance.Banner;
+
+public final class PrintBanner implements Print {
     private final Banner banner;
 
     public PrintBanner(String string) {

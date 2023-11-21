@@ -1,4 +1,4 @@
-package j.adapter.inheritance;
+package j.adapter.delegate;
 
 public final class Banner {
     private final String string;

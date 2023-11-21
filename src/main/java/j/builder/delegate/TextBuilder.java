@@ -1,8 +1,8 @@
-package j.builder.inheritance;
+package j.builder.delegate;
 
 import java.io.IOException;
 
-public final class TextBuilder extends Builder {
+public final class TextBuilder implements Builder {
     private final StringBuilder sb = new StringBuilder();
 
     @Override
