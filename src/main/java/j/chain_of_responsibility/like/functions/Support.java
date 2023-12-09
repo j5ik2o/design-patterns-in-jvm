@@ -1,7 +1,6 @@
 package j.chain_of_responsibility.like.functions;
 
 import j.chain_of_responsibility.Trouble;
-
 import java.util.function.Function;
 
 @FunctionalInterface

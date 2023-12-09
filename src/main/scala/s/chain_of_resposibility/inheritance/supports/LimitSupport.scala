@@ -5,12 +5,11 @@ import s.chain_of_resposibility.inheritance.Support
 
 final class LimitSupport(
     name: String,
-    private val limit: Int // この番号未満なら解決できる
-    ,
-    next: Support
+    private val limit: Int,
+    next: Option[Support]
 ) extends Support(name, next) {
-  def this(name: String, limit: Int) {
-    this(name, limit, null)
+  def this(name: String, limit: Int) = {
+    this(name, limit, None)
   }
 
   override protected def resolve(trouble: Trouble): Boolean =

@@ -3,11 +3,11 @@ package j.builder.delegate;
 import java.io.IOException;
 
 public interface Builder {
-    void makeTitle(String title);
+  void makeTitle(String title);
 
-    void makeString(String str);
+  void makeString(String str);
 
-    void makeItems(String[] items);
+  void makeItems(String[] items);
 
-    void close() throws IOException;
+  void close() throws IOException;
 }

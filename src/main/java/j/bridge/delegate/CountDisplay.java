@@ -1,21 +1,21 @@
 package j.bridge.delegate;
 
 public class CountDisplay implements Displayable {
-    private final Display display;
+  private final Display display;
 
-    public CountDisplay(DisplayImpl impl) {
-        this.display = new Display(impl);
-    }
+  public CountDisplay(DisplayImpl impl) {
+    this.display = new Display(impl);
+  }
 
-    public void display() {
-        display.display();
-    }
+  public void display() {
+    display.display();
+  }
 
-    public void multiDisplay(int times) {
-        display.open();
-        for (int i = 0; i < times; i++) {
-            display.print();
-        }
-        display.close();
+  public void multiDisplay(int times) {
+    display.open();
+    for (int i = 0; i < times; i++) {
+      display.print();
     }
+    display.close();
+  }
 }

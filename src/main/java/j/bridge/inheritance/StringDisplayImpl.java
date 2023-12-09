@@ -1,34 +1,34 @@
 package j.bridge.inheritance;
 
 public class StringDisplayImpl extends DisplayImpl {
-    private final String string;
-    private final int width;
+  private final String string;
+  private final int width;
 
-    public StringDisplayImpl(String string) {
-        this.string = string;
-        this.width = string.length();
-    }
+  public StringDisplayImpl(String string) {
+    this.string = string;
+    this.width = string.length();
+  }
 
-    @Override
-    public void rawOpen() {
-        printLine();
-    }
+  @Override
+  public void rawOpen() {
+    printLine();
+  }
 
-    @Override
-    public void rawPrint() {
-        System.out.println("|" + string + "|");
-    }
+  @Override
+  public void rawPrint() {
+    System.out.println("|" + string + "|");
+  }
 
-    @Override
-    public void rawClose() {
-        printLine();
-    }
+  @Override
+  public void rawClose() {
+    printLine();
+  }
 
-    private void printLine() {
-        System.out.print("+");
-        for (int i = 0; i < width; i++) {
-            System.out.print("-");
-        }
-        System.out.println("+");
+  private void printLine() {
+    System.out.print("+");
+    for (int i = 0; i < width; i++) {
+      System.out.print("-");
     }
+    System.out.println("+");
+  }
 }

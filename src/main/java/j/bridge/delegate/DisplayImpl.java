@@ -1,9 +1,9 @@
 package j.bridge.delegate;
 
 public interface DisplayImpl {
-    void rawOpen();
+  void rawOpen();
 
-    void rawPrint();
+  void rawPrint();
 
-    void rawClose();
+  void rawClose();
 }

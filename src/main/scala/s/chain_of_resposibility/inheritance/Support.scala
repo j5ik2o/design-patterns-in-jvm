@@ -19,10 +19,10 @@ abstract class Support(
   protected def resolve(trouble: Trouble): Boolean
 
   protected def done(trouble: Trouble): Unit = {
-    System.out.println(trouble + " is resolved by " + this + ".")
+    System.out.println(trouble.toString + " is resolved by " + this + ".")
   }
 
   protected def fail(trouble: Trouble): Unit = {
-    System.out.println(trouble + " cannot be resolved.")
+    System.out.println(trouble.toString + " cannot be resolved.")
   }
 }

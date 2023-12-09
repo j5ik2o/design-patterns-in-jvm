@@ -30,7 +30,6 @@ dependencies {
     implementation("org.scala-lang:scala-library:2.13.12")
     implementation("org.jetbrains:annotations:24.1.0")
     implementation("org.seasar.util:s2util:0.0.1")
-
 }
 
 java {

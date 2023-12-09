@@ -1,7 +1,7 @@
 package j.adapter.delegate;
 
 public interface Print {
-    void printWeak();
+  void printWeak();
 
-    void printStrong();
+  void printStrong();
 }

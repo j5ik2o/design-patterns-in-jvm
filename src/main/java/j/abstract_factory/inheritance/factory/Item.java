@@ -1,11 +1,11 @@
 package j.abstract_factory.inheritance.factory;
 
 public abstract class Item {
-    protected String caption;
+  protected String caption;
 
-    public Item(String caption) {
-        this.caption = caption;
-    }
+  public Item(String caption) {
+    this.caption = caption;
+  }
 
-    public abstract String makeHTML();
+  public abstract String makeHTML();
 }
