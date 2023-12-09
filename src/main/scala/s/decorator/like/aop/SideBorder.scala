@@ -2,12 +2,8 @@ package s.decorator.like.aop
 
 import scala.util.DynamicVariable
 
-object SideBorder {
-  val dv = new DynamicVariable[Char]
-}
-
 trait SideBorder extends Display {
-  def borderChar: Char = {}
+  def borderChar: Char
 
   abstract override def columns: Int = 1 + super.columns + 1
 

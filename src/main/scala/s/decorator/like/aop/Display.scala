@@ -13,13 +13,3 @@ trait Display {
     }
   }
 }
-
-object Display {
-  def ofString(string: String): Display = new StringDisplay(string)
-
-  def ofSideBorder(string: String, ch: Char): Display = {
-    new StringDisplay(string) with SideBorder {
-      override def borderChar: Char = ch
-    }
-  }
-}
