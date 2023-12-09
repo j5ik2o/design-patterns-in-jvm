@@ -1,4 +1,4 @@
-package s.strategy
+package s.strategy.delegate
 
 object Main {
   def main(args: Array[String]): Unit = {

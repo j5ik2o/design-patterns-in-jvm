@@ -1,4 +1,6 @@
-package s.strategy
+package s.strategy.delegate
+
+import s.strategy.Hand
 
 import java.security.SecureRandom
 

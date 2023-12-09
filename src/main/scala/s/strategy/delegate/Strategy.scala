@@ -1,4 +1,6 @@
-package s.strategy
+package s.strategy.delegate
+
+import s.strategy.Hand
 
 trait Strategy {
   def nextHand: (Strategy, Hand)
