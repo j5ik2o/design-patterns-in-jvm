@@ -22,8 +22,11 @@ dependencies {
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.10.1")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
+    testImplementation("org.scalatest:scalatest_2.13:3.2.17")
+
     implementation("io.vavr:vavr:0.10.4")
     implementation("org.jetbrains.kotlin:kotlin-stdlib")
+    // implementation("org.scala-lang:scala3-library_3:3.0.1")
     implementation("org.scala-lang:scala-library:2.13.12")
     implementation("org.jetbrains:annotations:24.1.0")
     implementation("org.seasar.util:s2util:0.0.1")
