@@ -1,4 +1,4 @@
-package j.chain_of_responsibility.like.dop;
+package j.chain_of_responsibility.like.doplike;
 
 public sealed interface SupportData
     permits SupportData.NoSupportData,
