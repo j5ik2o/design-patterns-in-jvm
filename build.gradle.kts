@@ -26,7 +26,8 @@ dependencies {
 
     implementation("io.vavr:vavr:0.10.4")
     implementation("org.jetbrains.kotlin:kotlin-stdlib")
-    implementation("org.scala-lang:scala-library:2.13.12")
+    // implementation("org.scala-lang:scala-library:2.13.12")
+    implementation("org.scala-lang:scala3-library_3:3.3.1")
     implementation("org.jetbrains:annotations:24.1.0")
     implementation("org.seasar.util:s2util:0.0.1")
 }
