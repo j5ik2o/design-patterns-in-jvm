@@ -1,15 +1,9 @@
 package s.template_method.like.functional
 
-import s.template_method.like.functional.Display._
-
-object Display {
-  type DisplayDelegate = () => Unit
-}
-
 final class Display(
-    private val opener: DisplayDelegate,
-    private val printer: DisplayDelegate,
-    private val closer: DisplayDelegate
+                     opener: () => Unit,
+                     printer: () => Unit,
+                     closer: () => Unit
 ) {
   def display(): Unit = {
     opener()

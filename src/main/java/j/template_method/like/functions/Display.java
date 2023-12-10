@@ -13,7 +13,7 @@ public final class Display {
     this.closer = closer;
   }
 
-  public final void display() {
+    public void display() {
     opener.get();
     for (int i = 0; i < 5; i++) {
       printer.get();

@@ -1,7 +1,5 @@
 package s.template_method.like.functional
 
-import s.template_method.like.functional.Display.DisplayDelegate
-
 object DisplayFactory {
 
   def createString(string: String): Display = {
@@ -15,34 +13,17 @@ object DisplayFactory {
       Console.println("+")
     }
 
-    val opener: DisplayDelegate = () => {
-      printLine()
-    }
-
-    val printer: DisplayDelegate = () => {
-      Console.println("|" + string + "|")
-    }
-
-    val closer: DisplayDelegate = () => {
-      printLine()
-    }
+    val opener = () => printLine()
+    val printer = () => Console.println("|" + string + "|")
+    val closer = () => printLine()
 
     new Display(opener, printer, closer)
   }
 
   def createChar(ch: Char): Display = {
-    val opener: DisplayDelegate = () => {
-      Console.print("<<")
-    }
-
-    val printer: DisplayDelegate = () => {
-      Console.print(ch)
-    }
-
-    val closer: DisplayDelegate = () => {
-      Console.println(">>")
-    }
-
+    val opener = () => Console.print("<<")
+    val printer = () => Console.print(ch)
+    val closer = () => Console.println(">>")
     new Display(opener, printer, closer)
   }
 
