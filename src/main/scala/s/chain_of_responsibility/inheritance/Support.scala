@@ -1,6 +1,6 @@
-package s.chain_of_resposibility.inheritance
+package s.chain_of_responsibility.inheritance
 
-import s.chain_of_resposibility.Trouble
+import s.chain_of_responsibility.Trouble
 
 abstract class Support(
     private val name: String,

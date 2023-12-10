@@ -1,6 +1,6 @@
-package s.chain_of_resposibility.like.functional
+package s.chain_of_responsibility.like.functional
 
-import s.chain_of_resposibility.Trouble
+import s.chain_of_responsibility.Trouble
 
 object OddSupport {
   def create(name: String): PartialFunction[Trouble, Unit] = {

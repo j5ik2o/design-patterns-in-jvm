@@ -22,7 +22,7 @@ dependencies {
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.10.1")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
-    testImplementation("org.scalatest:scalatest_2.13:3.2.17")
+    testImplementation("org.scalatest:scalatest_3:3.2.17")
 
     implementation("io.vavr:vavr:0.10.4")
     implementation("org.jetbrains.kotlin:kotlin-stdlib")
@@ -51,7 +51,7 @@ scala {
 tasks {
     withType<ScalaCompile>().configureEach {
         scalaCompileOptions.apply {
-            additionalParameters = listOf("-feature", "-deprecation")
+            additionalParameters = listOf("-feature", "_")
         }
     }
 

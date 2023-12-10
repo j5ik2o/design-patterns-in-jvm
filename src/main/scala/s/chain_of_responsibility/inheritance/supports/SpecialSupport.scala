@@ -1,7 +1,7 @@
-package s.chain_of_resposibility.inheritance.supports
+package s.chain_of_responsibility.inheritance.supports
 
-import s.chain_of_resposibility.Trouble
-import s.chain_of_resposibility.inheritance.Support
+import s.chain_of_responsibility.Trouble
+import s.chain_of_responsibility.inheritance.Support
 
 final class SpecialSupport(
     name: String,

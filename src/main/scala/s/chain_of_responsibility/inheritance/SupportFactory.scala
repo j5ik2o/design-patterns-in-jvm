@@ -1,11 +1,6 @@
-package s.chain_of_resposibility.inheritance
+package s.chain_of_responsibility.inheritance
 
-import s.chain_of_resposibility.inheritance.supports.{
-  LimitSupport,
-  NoSupport,
-  OddSupport,
-  SpecialSupport
-}
+import s.chain_of_responsibility.inheritance.supports.{LimitSupport, NoSupport, OddSupport, SpecialSupport}
 
 object SupportFactory {
   def createNoSupport(name: String, next: Option[Support]) =

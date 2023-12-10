@@ -1,4 +1,4 @@
-package s.chain_of_resposibility
+package s.chain_of_responsibility
 
 final case class Trouble(number: Int) {
   // トラブルの文字列表現
