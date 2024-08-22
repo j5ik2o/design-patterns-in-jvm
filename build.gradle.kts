@@ -3,7 +3,7 @@ import org.gradle.api.tasks.testing.logging.TestLogEvent
 
 plugins {
     id("com.diffplug.spotless") version "6.22.0"
-    id("org.jetbrains.kotlin.jvm") version "2.0.0-Beta1"
+    id("org.jetbrains.kotlin.jvm") version "2.0.20"
     id("scala")
 }
 
