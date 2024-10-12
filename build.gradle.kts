@@ -24,7 +24,7 @@ dependencies {
 
     testImplementation("org.scalatest:scalatest_3:3.2.17")
 
-    implementation("io.vavr:vavr:0.10.4")
+    implementation("io.vavr:vavr:0.10.5")
     implementation("org.jetbrains.kotlin:kotlin-stdlib")
     // implementation("org.scala-lang:scala-library:2.13.12")
     implementation("org.scala-lang:scala3-library_3:3.3.1")
