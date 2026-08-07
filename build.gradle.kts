@@ -18,8 +18,8 @@ repositories {
 }
 
 dependencies {
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.14.2")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.14.2")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:6.1.3")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:6.1.3")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
     testImplementation("org.scalatest:scalatest_3:3.2.17")
